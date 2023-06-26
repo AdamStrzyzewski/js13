@@ -1,0 +1,16 @@
+// NO
+
+console.log(!true) // true => false
+console.log(!false) // !false => true
+console.log(!"5") // truthy => false
+console.log(!0) // !falsey => true
+console.log(!"0") // !truthy => false
+console.log(!"") // !falsey => true
+
+const x = 5;
+const y = 0
+const xBool = !!x // !!truthy => true
+const yBool = !!y // !!falsey => false
+
+console.log(xBool)
+console.log(yBool)

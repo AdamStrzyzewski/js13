@@ -1,0 +1,39 @@
+// weird behaviours of numbers
+
+const x = "2" + 3 * 10
+console.log(x)
+console.log(typeof x)
+// "2" + 3 => konkatenację "23"
+// "23" * 10 => '230'
+
+
+// + -> number + number => math operation addition
+// + -> string + number => concatenation
+
+console.log(2 + 3 * 10)
+console.log(2 + 3 / 10)
+
+console.log("1" + 3 + 10)
+// "1" + 3 => "13"
+// "13" + 10 => "1310"
+
+console.log("1" - 1)
+
+
+console.log(0.1 + 0.2)
+console.log((0.1 + 0.2) === 0.3)
+
+console.log(("1" + 3) * 10)
+
+console.log((Math.floor((0.1 + 0.2) * 10)) / 10)
+// 0.1 + 0.2 ~~ 0.3000000004
+// 0.3000000004 * 10
+// 3.000000004 => floor
+// 3 => / 10
+// 0.3
+
+console.log(Math.floor(5.5)) // 5
+console.log(Math.ceil(5.5)) // 6
+console.log(Math.round(5.4)) // 5
+console.log(Math.round(5.5)) // 6
+console.log(Math.round(5.6)) // 6

@@ -1,0 +1,36 @@
+// Number
+
+// javascript does not work this way
+// Number x = 5;
+// x = "Hello world" // error
+
+
+// let x = 5;
+// x = "Hello World"
+// console.log(x)
+
+const a = 5
+
+const b = "10"
+
+console.log(a + b)
+console.log(b + a)
+
+// casting, parsing, rzutowanie
+
+// parseInt(number)
+// parseFloat(number)
+// Number.parseInt(number)
+// Number.parseFloat(number)
+
+console.log(parseInt("50")) // 50
+console.log(typeof parseInt("50")) // number
+console.log(parseInt("abc")) // NaN - Not a Number
+console.log(parseInt("abc") * 10) // NaN * Number => Not a Number
+console.log(typeof parseInt("abc"))
+
+console.log(parseFloat("50.4"))
+console.log(parseFloat("50,4"))
+console.log(typeof parseFloat("50.4"))
+
+

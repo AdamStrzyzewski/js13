@@ -1,0 +1,10 @@
+// number to string and string literals
+
+const x = 5;
+const y = "robots";
+
+const msg = `You ordered ${x} of ${y}`;
+const msgAlt = 'You ordered ' + x + ' of ' + y;
+
+console.log(msg);
+console.log(msgAlt);

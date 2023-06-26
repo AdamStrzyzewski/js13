@@ -1,0 +1,35 @@
+// equality and math operators
+
+// === exact match
+// do not use
+// ==
+// !== 
+// do not use
+// != 
+
+// console.log("5" == 5) // true
+// console.log("5" === 5) // false
+
+// console.log("5" != 5) // false
+// console.log("5" !== 5) // true
+
+console.log("abc" === "abc") // true
+console.log(true === true) // true
+console.log(null === null) // true
+console.log(NaN === NaN) // false
+console.log(undefined === undefined) // true
+console.log([1,2] === [1,2]) // false
+
+const x = 5;
+const y = 10;
+const z = 10;
+// x greater than y
+// console.log(x > y) // false
+// x lesser than y
+// console.log(x < y) // true
+
+// y greater or equal z
+// console.log(y >= z) // true
+// y lesser or equal z
+// console.log(y <= z) // true
+

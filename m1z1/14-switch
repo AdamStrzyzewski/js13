@@ -1,0 +1,24 @@
+// switch
+
+let cost = 350
+
+switch (cost) {
+  case 100: // cost === 100
+    console.log("bronze")
+    break;
+
+  case 200: // cost === 200
+    console.log("platinum")
+    break;
+
+  case 300:
+  case 400:
+    console.log("gold")
+    
+  case 150:
+    console.log("dog")
+    break;
+  case 50:
+  default:
+    console.log("unknown")
+}

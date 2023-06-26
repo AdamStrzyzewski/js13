@@ -1,0 +1,20 @@
+// for
+for (let i = 0; i < 5; i++) {
+  if (i === 2) {
+    continue;
+  }
+  if (i === 4) {
+    break;
+  }
+  console.log(i)
+}
+
+// 1st loop -> i === 0
+// after 1st loop i++ => i === 1
+
+// 2st loop -> i === 1
+// after 2st loop i++ => i === 2
+
+// ...
+// i === 5 -> i < 5 => false
+// break loop

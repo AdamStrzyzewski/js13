@@ -1,0 +1,22 @@
+// variables
+const x = 15;
+let y = 'Hello World';
+
+// do not use, but you can see it sometimes
+var z = "20"
+z += "test"
+console.log(z)
+
+console.log(x)
+console.log(y)
+console.log(z)
+
+// const - constant
+const a = 5;
+// a = 10; // throws error
+
+let b = 1
+// b = b + 5
+b += 5
+
+console.log(b)

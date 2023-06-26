@@ -1,0 +1,25 @@
+// logical operators OR
+
+// || - OR
+
+let age = 20;
+console.log(age < 10 || age > 30)
+// age < 10 => false
+// age > 30 => false
+// false || false 
+// false
+age = 9
+console.log(age < 10 || age > 30)
+// age < 10 => true
+// age > 30 => false
+// true || false 
+// true
+
+console.log(5 || 10) // 5 - first truth-y expression
+console.log(null || 5) // 5 - first truth-y expression
+// null => false-y
+
+const x = 0;
+const z = 10;
+const y = x || z;
+console.log(y)

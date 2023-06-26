@@ -1,0 +1,16 @@
+// logical operators AND
+
+// && - AND
+
+const a = 10;
+const b = 15;
+
+console.log(a > 5 && b < 20)
+// a > 5 => true
+// b < 20 => true
+// true && true => true
+
+console.log(a > 5 && "Hello World")
+
+// little clunky
+a > 5 && console.log("Test")

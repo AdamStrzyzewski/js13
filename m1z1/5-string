@@ -1,0 +1,46 @@
+// string
+
+// '', "", ``
+// grawis, backtick, ciapek
+const username = "Maaaaaango452#$#@ąĘŻ"
+// const name = 'It's me' // syntax error
+// const "this character is " " // syntax error
+
+console.log(username.length)
+console.log(username[0])
+console.log(username[username.length - 1])
+
+console.log(username.toLowerCase())
+console.log(username.toUpperCase())
+
+console.log(username.indexOf("go")) // 3
+console.log(username.indexOf("gofdsafa")) // -1
+
+console.log(username.includes("go")) // true
+console.log(username.includes("GO")) // false
+
+console.log("GO" === "go") // false
+
+console.log(username.startsWith("Mango")) // false
+console.log(username.startsWith("m")) // false
+
+console.log(username.endsWith("ąĘŻ")) // true
+console.log(username.endsWith("ąĘż")) // false
+
+console.log(username.replace("Mango", "Apple"))
+console.log(username)
+console.log(username.replaceAll("a", "-"))
+
+console.log(username.slice(0, 4)) // from 0 index to 4 index excluding 4
+console.log(username.slice(-5)) // last 5 characters
+
+
+const x = "mama"
+
+console.log(x[0])
+console.log(x[1])
+console.log(x[2])
+console.log(x[3])
+
+console.log(x.replace("a", "-"))
+console.log(x.replaceAll("a", "-"))
