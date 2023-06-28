@@ -1,0 +1,17 @@
+// array methods push pop unshift shift
+
+const arr = ['a', 'b', 'c']
+
+// arr.push('d', 'e')
+// console.log(arr) // ['a', 'b', 'c', 'd', 'e']
+
+// arr.unshift('d', 'e')
+// console.log(arr) // ['d','e', 'a', 'b', 'c']
+
+// const lastElement = arr.pop()
+// console.log(lastElement) 
+// console.log(arr)
+
+// const firstElement = arr.shift()
+// console.log(firstElement) 
+// console.log(arr)

@@ -1,0 +1,40 @@
+// functions
+
+const a = 5;
+const b = 10;
+const c = 0;
+
+// const n = a / b;
+
+// const m = a / c; // Infinity
+
+// console.log(n,m)
+
+// let n
+// if (b === 0) {
+//   console.log("Can't divide by zero")
+// } else {
+//   n = a / b
+//   console.log(n)
+// }
+
+// let m
+// if (c === 0) {
+//   console.log("Can't divide by zero")
+// } else {
+//   m = a / c
+//   console.log(m)
+// }
+
+// const multiply = 5; error
+function multiply(a, b) {
+  if (b === 0) {
+    console.log("can't divide by zero")
+  } else {
+    console.log(a / b)
+  }
+}
+
+multiply(5, 10)
+multiply(10, 15)
+multiply(10, 0)

@@ -1,0 +1,28 @@
+// array methods split and join
+
+const arr = ['a', 'b', 'c']
+
+// console.log(arr.join()) // default ',' // => "a,b,c"
+
+// console.log(arr.join("-")) // => "a-b-c"
+// console.log(arr.join(" - ")) // => "a - b - c"
+
+const str = arr.join(" - ")
+
+// console.log(str.split()) // single string
+// console.log(str.split(" - "))
+
+
+const stringOfNumbers = '1,2,3,4,5,6'
+
+const arrayOfNumbers = stringOfNumbers.split(',')
+
+console.log(arrayOfNumbers)
+
+for (let i = 0 ; i < arrayOfNumbers.length ; i++){
+    arrayOfNumbers[i] = parseInt(arrayOfNumbers[i]) * 10
+}
+
+console.log(arrayOfNumbers.join())
+
+console.log(stringOfNumbers.split(",").join("-"))
