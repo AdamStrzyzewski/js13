@@ -1,0 +1,13 @@
+// shorthands
+
+function objectifyBook(name, title, pageCount){
+    return {
+        // name: name,
+        name,
+        title,
+        pageCount
+    }
+}
+
+const obj1 =objectifyBook('J.R.R Tolkien', 'The Hobbit', 500) 
+console.log(obj1)

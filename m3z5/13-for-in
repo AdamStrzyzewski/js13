@@ -1,0 +1,25 @@
+// for in
+
+const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  genres: ["historical prose", "adventure"],
+  rating: 8.38,
+};
+
+for (const key in book) {
+  // Klucz
+  console.log(key);
+  // Wartość właściwości pod tym kluczem
+  console.log(book[key]);
+}
+
+const animal = {
+  legs: 4,
+};
+const dog = Object.create(animal);
+dog.name = "Mango";
+
+console.log(dog);// {name: 'Mango'}
+console.log(dog.name);// 'Mango'
+console.log(dog.legs);// 4

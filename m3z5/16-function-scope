@@ -1,0 +1,12 @@
+// function scope
+
+const a = 5;
+// a - global variable
+// b - param 
+// c - local variable
+function foo(b){
+    const c = 10;
+    console.log(a + b + c)
+}
+
+foo(15)
