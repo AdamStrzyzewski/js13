@@ -1,0 +1,10 @@
+// fun error
+const shops = ['id1', 'id2']
+
+const selectedShop = 'id1'
+
+if (shops.includes[selectedShop] || shops.length === 0) {
+  console.log("true")
+} else {
+  console.log("false")
+}
