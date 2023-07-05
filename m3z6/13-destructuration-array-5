@@ -1,0 +1,9 @@
+// destructuration array 5
+
+const rgb = [200, 255, 100]
+
+const [...colors] = rgb
+const colors2 = [...rgb] // this is better
+
+console.log(colors)
+console.log(colors2)

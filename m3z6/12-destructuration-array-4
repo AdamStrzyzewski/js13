@@ -1,0 +1,12 @@
+// destructuration array 4
+
+const rgb = [200, 255, 100]
+
+// rest
+const [red, ...colors] = rgb
+// const [red, ...colors, blue] = rgb // SyntaxError: Rest element must be last element
+
+console.log({
+  red,
+  colors
+})

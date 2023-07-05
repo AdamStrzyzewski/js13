@@ -1,0 +1,56 @@
+// spread objects with repeated keys
+
+const first = {
+  a: 10,
+  b: 5
+}
+
+const second = {
+    b: 15,
+    c: 20
+}
+
+// const third = {
+//     a: first.a,
+//     b: first.b,
+//     b: second.b,
+//     c: second.c
+// }
+
+const third = {
+    ...first,
+    ...second
+}
+
+
+// const fourth = {
+//     b: second.b,
+//     c: second.c,
+//     a: first.a,
+//     b: first.b
+// }
+
+const fourth = {
+    ...second,
+    ...first,
+}
+
+// const fifth = {
+//     b: second.b,
+//     c: second.c,
+//     a: 350,
+//     a: first.a,
+//     b: first.b,
+//     b: 38
+// }
+
+const fifth = {
+    ...second,
+    a: 350,
+    ...first,
+    b: 38
+}
+
+console.log(third)
+console.log(fourth)
+console.log(fifth)

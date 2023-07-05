@@ -1,0 +1,18 @@
+// rest
+
+// function avg(...rest) // ok
+// function avg(...restArgs) // ok
+// function avg(...bochenek) // ok not recommended
+// function avg(...arguments) // not ok
+function avg(...args) {
+  // const argsArr = [...arguments] 
+  let sum = 0
+  for (arg of args){
+      sum += arg
+  }
+  return args.length === 0 ? 0 : sum / args.length
+}
+
+console.log(avg(10, -15, 30, 30, 23, 324))
+console.log(avg())
+console.log(avg(1, 4))

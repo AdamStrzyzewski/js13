@@ -1,0 +1,28 @@
+// destructuration object 2
+
+const user = {
+  name: "Jacques Gluke",
+  tag: "jgluke",
+  stats: {
+    followers: 5603,
+    views: 4827,
+    likes: 1308,
+  },
+  tags: ["celebrity", "photographer"]
+};
+
+const {
+  name,
+  tag,
+  stats, // entire stats object const stats = user.stats
+  stats: {
+    followers, // const followers = user.stats.followers
+    views: userViews = 100 // const userViews = user.stats.views || 100
+  },
+  tags: [
+    firstTag, // const firstTag = user.tags[0]
+    secondTag // const secondTag = user.tags[1]
+  ]
+} = user
+
+console.log(name, tag, followers, userViews, stats, firstTag, secondTag)

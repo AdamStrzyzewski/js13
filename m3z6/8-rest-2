@@ -1,0 +1,16 @@
+// rest 2
+
+// function avg(suffix, ...args, thirdParam) // not okay
+
+function avg(suffix, ...args) {
+  let sum = 0
+  for (arg of args) {
+    sum += arg
+  }
+  const avg = args.length === 0 ? 0 : sum / args.length
+  return `${avg} ${suffix}`
+}
+
+console.log(avg('$', 10, -15, 30, 30, 23, 324))
+console.log(avg("EUR"))
+console.log(avg('PLN', 1, 4))
