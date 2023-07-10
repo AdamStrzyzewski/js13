@@ -1,0 +1,22 @@
+// arrow syntax edgecase
+
+
+const foo = ({
+  option1,
+  option2
+}) => {
+  console.log(option1, option2)
+}
+
+// error
+// const foo = {
+//   option1,
+//   option2
+// } => {
+//   console.log(option1, option2)
+// }
+
+foo({
+  option1: 500,
+  option2: "test"
+})

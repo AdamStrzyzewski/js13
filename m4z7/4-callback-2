@@ -1,0 +1,35 @@
+// callback 2
+
+// for (let i = 0; i < 5; i += 1) {
+//   console.log(Math.random())
+// }
+
+// for (let i = 0; i < 10; i += 1) {
+//   console.log(Math.random())
+// }
+
+// for (let i = 0; i < 3; i += 1) {
+//   console.log(`hello ${i}`)
+// }
+
+// higher order function
+function repeat(n, cb) {
+  for (let i = 0; i < n; i += 1) {
+    cb(i)
+  }
+}
+
+// anonymous function
+repeat(5, function() {
+  console.log(Math.random())
+})
+
+repeat(10, function() {
+  console.log(Math.random())
+})
+
+function hello(i) {
+  console.log(`hello ${i}`)
+}
+
+repeat(3, hello)

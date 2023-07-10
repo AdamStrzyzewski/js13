@@ -1,0 +1,18 @@
+// arrow function application 3
+
+function safeDivide(a, b) {
+  if (b === 0) {
+    return 0
+  }
+  return a / b
+}
+
+// function safeDivide(a, b) {
+//   return b === 0 ? 0 : a / b
+// }
+
+const safeDivide = (a, b) => b === 0 ? 0 : a / b
+
+// const safeDivide = function(a, b) {
+//   return b === 0 ? 0 : a / b
+// }

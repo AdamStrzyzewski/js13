@@ -1,0 +1,33 @@
+// callback
+
+// addition
+// multiplication
+function addition(...numbers) {
+  let sum = 0;
+  for (const number of numbers) {
+    sum += parseInt(number)
+  }
+  return sum
+}
+
+function multiplication(...numbers) {
+  let product = 1;
+  for (const number of numbers) {
+    product *= parseInt(number)
+  }
+  return product
+}
+
+// higher order function
+function doMath(operation, ...args) {
+  console.log(`Result of the operation is: ${operation(...args)}`)
+}
+
+// doMath(function() {}, 1, 2, 3)
+
+// console.log(addition(1, 2, 4, "15"))
+
+// addition - callback
+doMath(addition, 1, 2, 4, "15")
+// multiplication - callback
+doMath(multiplication, 1, 2, 4, "15")

@@ -1,0 +1,8 @@
+// compare arrays
+
+const arr = [1,2,3]
+const arrRef = arr
+const arrSpread = [...arr]
+
+console.log(arr === arrRef)
+console.log(arr === arrSpread)
