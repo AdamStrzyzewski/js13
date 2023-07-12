@@ -1,0 +1,11 @@
+// map 2
+
+const arr = [1, 2, 3, 4]
+
+const indexCb = (number, index) => index
+// const indexCb = (_, index) => index
+// const indexCb = (_, __, index) => index
+
+const mapOfIndex = arr.map(indexCb)
+
+console.log(mapOfIndex)

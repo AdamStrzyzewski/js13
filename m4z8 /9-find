@@ -1,0 +1,37 @@
+// find
+
+const colorPickerOptions = [{
+    label: "red",
+    color: "#F44336"
+  },
+  {
+    label: "green",
+    color: "#4CAF50"
+  },
+  {
+    label: "green",
+    color: "#4DAF50"
+  },
+  {
+    label: "blue",
+    color: "#2196F3"
+  },
+  {
+    label: "pink",
+    color: "#E91E63"
+  },
+  {
+    label: "indigo",
+    color: "#3F51B5"
+  },
+];
+
+// .find((element, index, array) => {})
+
+const firstGreen = colorPickerOptions.find(color => color.label === 'green')
+const allGreens = colorPickerOptions.filter(color => color.label === 'green')
+const orange = colorPickerOptions.find(color => color.label === 'orange')
+
+console.log(firstGreen)
+console.log(allGreens)
+console.log(orange)

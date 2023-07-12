@@ -1,0 +1,24 @@
+// every and some 2
+
+const fruits = [{
+    name: "apples",
+    amount: 100
+  },
+  {
+    name: "bananas",
+    amount: 0
+  },
+  {
+    name: "grapes",
+    amount: 50
+  },
+]
+
+
+const allAvailable = fruits.every(fruit => fruit.amount > 0)
+console.log(allAvailable) // true
+
+const isAnyAvailable = fruits.some(({
+  amount
+}) => amount > 0)
+console.log(isAnyAvailable) // true

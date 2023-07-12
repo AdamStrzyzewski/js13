@@ -1,0 +1,39 @@
+// reduce 2
+
+const students = [{
+    name: "Mango",
+    score: 83
+  },
+  {
+    name: "Poly",
+    score: 59
+  },
+  {
+    name: "Ajax",
+    score: 37
+  },
+  {
+    name: "Kiwi",
+    score: 94
+  },
+  {
+    name: "Houston",
+    score: 64
+  },
+];
+
+
+const totalScore = students.reduce((acc, {
+  score
+}) => acc + score, 0)
+
+console.log(totalScore)
+
+console.log(totalScore / students.length)
+
+
+// without initial value
+// console.log({
+//   name: "Mango",
+//   score: 83
+// } + 59)

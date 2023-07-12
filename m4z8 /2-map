@@ -1,0 +1,21 @@
+// map
+
+const arr = [1, 2, 3, 4]
+
+// const multiplied = arr.map((el, index, array) => el * 3) 
+
+const cb = (number) => number * 3
+
+const multiplied = arr.map(cb)
+
+// [
+//     cb(arr[0], 0, arr),
+//     cb(arr[1], 1, arr),
+//     cb(arr[2], 2, arr),
+//     cb(arr[3], 3, arr)
+// ]
+
+console.log(multiplied)
+console.log(arr)
+
+

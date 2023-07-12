@@ -1,0 +1,23 @@
+// sort 3
+
+const students = [
+  "Łukasz",
+  "Lukasz",
+  "Adam","Jakub","adam", 
+  "Marcin", "Krystian", "Krystian"
+]
+
+students.sort((a, b) => {
+  console.log(`a: ${a}, b: ${b}, result: ${a.localeCompare(b)}`)
+  return a.localeCompare(b)
+
+  //   if (a > b) {
+  //     return -1
+  //   }
+  //   return 1
+
+})
+
+console.log(students)
+
+// "Łukasz" > "Lukasz"

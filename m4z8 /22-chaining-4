@@ -1,0 +1,31 @@
+// chaining 4
+
+const students = [{
+    name: "Mango",
+    score: 83,
+    courses: ["matematyka", "fizyka"]
+  },
+  {
+    name: "Poly",
+    score: 59,
+    courses: ["informatyka", "matematyka"]
+  },
+  {
+    name: "Ajax",
+    score: 37,
+    courses: ["fizyka", "biologia"]
+  },
+  {
+    name: "Kiwi",
+    score: 94,
+    courses: ["literatura", "informatyka"]
+  },
+];
+
+const over50Names = students // array
+  .filter(student => student.score > 50) // array
+  .map(el => el.name) // array
+  .join(", ") // string
+  .split(", ") // array
+
+console.log(over50Names)

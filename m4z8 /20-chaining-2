@@ -1,0 +1,29 @@
+// chaining 2
+
+const students = [{
+    name: "Mango",
+    score: 83,
+    courses: ["matematyka", "fizyka"]
+  },
+  {
+    name: "Poly",
+    score: 59,
+    courses: ["informatyka", "matematyka"]
+  },
+  {
+    name: "Ajax",
+    score: 37,
+    courses: ["fizyka", "biologia"]
+  },
+  {
+    name: "Kiwi",
+    score: 94,
+    courses: ["literatura", "informatyka"]
+  },
+];
+
+const isTherePerfectScore = students
+  .find(el => el.score === 100) // not an array
+  .map(el => el.name) // error
+
+console.log(isTherePerfectScore)

@@ -1,0 +1,45 @@
+// reduce
+
+// arr.reduce(
+//   (acc, element, index, array) => {
+//     // operations on acc
+//     return acc
+//   }, initialValue
+// )
+
+
+const sum = [2, 7, 3, 14].reduce((acc, number) => {
+  console.log(`acc: ${acc}, number: ${number}`)
+  return acc + number
+})
+
+// cb(2, 7) => 2 + 7 = 9
+// cb(9, 3) => 9 + 3 = 12
+// cb(12, 14) => 12 + 14 = 26
+console.log(sum)
+
+console.log('--------')
+const sumWithInitial = [2, 7, 3, 14].reduce((acc, number) => {
+  console.log(`acc: ${acc}, number: ${number}`)
+  return acc + number
+}, 0)
+
+// cb(0, 2) => 0 + 2 = 2
+// cb(2, 7) => 2 + 7 = 9
+// cb(9, 3) => 9 + 3 = 12
+// cb(12, 14) => 12 + 14 = 26
+console.log(sumWithInitial)
+console.log('--------')
+
+const sumShort = [2, 7, 3, 14].reduce((acc, number) => acc + number, 0)
+console.log(sumShort)
+
+const brokenSum = [2, 7, 3, 14].reduce((acc, number) => {
+  acc += number
+  // return acc // this missing
+}, 0)
+// cb(0, 2) => 0 + 2 => undefined
+// cb(undefined, 7) => 2 + 7 => undefined
+// cb(undefined, 3) => 9 + 3 => undefined
+// cb(undefined, 14) => 12 + 14 => undefined
+console.log(brokenSum)
