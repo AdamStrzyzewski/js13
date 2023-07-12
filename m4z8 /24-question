@@ -1,0 +1,11 @@
+// question
+
+const log = console.log
+
+const log2 = (x) => {
+  return console.log(x)
+}
+
+
+log(44)
+log2(44)
