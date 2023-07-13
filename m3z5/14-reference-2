@@ -1,0 +1,32 @@
+// reference 2
+
+const bookShelf = [{
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "Sen śmiesznego człowieka",
+    author: "Fiodor Dostojewski",
+    rating: 7.75,
+  },
+];
+
+const book1 = bookShelf[0] // reference
+let book1Title = book1.title // no reference // primitive
+let book1Rating = book1.rating // no reference // primitive
+
+// book1.title = "Hobbit"
+bookShelf[0].title = "Hobbit"
+book1Title = 'LotR'
+book1Rating = 5
+console.log(book1Title)
+console.log(book1Rating)
+console.log(book1)
+console.log(bookShelf[0])
+

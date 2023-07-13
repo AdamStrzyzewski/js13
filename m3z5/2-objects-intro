@@ -1,0 +1,54 @@
+// objects intro
+
+const key = 'pageCount'
+const bookObj = {
+  // key: value -> prop / property
+  title: "The Hobbit",
+  'is for kids': true,
+  [`${key}`]: 500,
+  5: 10,
+  author: {
+      firstName: 'J.R.R',
+      secondName: 'Tolkien'
+  },
+  genres: ['fantasy', 'kid fantasy']
+}
+
+// console.log(bookObj)
+// console.log(typeof bookObj)
+
+const title = bookObj.title
+console.log(title)
+console.log(bookObj.title)
+
+console.log(bookObj.pageCount)
+// console.log(bookObj[pageCount]) // syntax error
+console.log(bookObj['pageCount'])
+console.log(bookObj[key])
+
+console.log(bookObj['is for kids'])
+// console.log(bookObj.'is for kids') // syntax error
+// console.log(bookObj[is for kids]) // syntax error
+
+console.log(bookObj.author.firstName)
+console.log(bookObj.author['firstName'])
+console.log(bookObj['author']['firstName'])
+console.log(bookObj['author'].firstName)
+
+console.log(bookObj.isbn) // undefined
+// console.log(bookObj.author.nationality.countryCode) // syntax error
+// console.log(bookObj.price.pln)
+
+
+// modyfing prop
+bookObj.title = "Lord of the Rings"
+// adding new prop
+bookObj.price = 25
+// deleting prop
+delete bookObj['5']
+
+// reference
+const author = bookObj.author
+author.height = 180
+
+console.log(bookObj)

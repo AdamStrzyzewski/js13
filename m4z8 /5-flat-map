@@ -1,0 +1,20 @@
+// flat map
+const students = [{
+    name: "Mango",
+    courses: ["matematyka", "fizyka"]
+  },
+  {
+    name: "Poly",
+    courses: ["informatyka", "matematyka"]
+  },
+  {
+    name: "Kiwi",
+    courses: ["fizyka", "biologia", ["nestedMath"]]
+  },
+];
+
+const courses = students.map(student => student.courses)
+const coursesFlat = students.flatMap(student => student.courses)
+
+console.log(courses)
+console.log(coursesFlat)

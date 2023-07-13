@@ -1,0 +1,10 @@
+// parameters and arguments
+
+// param1, param2, param3 -> parameters
+function foo(param1, param2, param3) {
+    // arguments
+}
+
+
+// 1, 2, 3 -> arguments
+foo(1, 2, 3)

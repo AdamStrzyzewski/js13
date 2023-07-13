@@ -1,0 +1,25 @@
+// arrow function syntax cases
+
+function foo1(param){
+    return param
+}
+
+const foo2 = param => param
+
+const foo3 = (param) => param
+
+const foo4 = param => { return param }
+
+const foo5 = (param) => { return param }
+
+// const foo6 = param1, param2 => `${param1} ${param2}` // error
+const foo6 = (param1, param2) => `${param1} ${param2}`
+const foo7 = (param1, param2) => { return `${param1} ${param2}` }
+
+const foo8 = (param) => {
+    console.log("called")
+    return 'foo8'
+}
+
+// const foo8 = (param) => console.log("called")
+// return 'foo8' // error

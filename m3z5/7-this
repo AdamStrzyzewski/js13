@@ -1,0 +1,12 @@
+// this 
+
+const obj1 = {
+  a: 50,
+  modifyA(n) {
+    this.a = n
+    // obj1.a = n
+  }
+}
+
+obj1.modifyA(100)
+console.log(obj1)

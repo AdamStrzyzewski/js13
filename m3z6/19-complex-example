@@ -1,0 +1,16 @@
+// complex example
+const [data] = client.runReport({
+  property: gaId,
+  dateRanges: [{
+    startDate: start.toString(),
+    endDate: end.toString(),
+  }, ],
+  dimensions,
+  metrics,
+  limit: limit || 250 * 1000,
+  offset: offset || 0,
+  keepEmptyRows: true,
+}, {
+  maxResults: 100000,
+  autoPaginate: true
+});

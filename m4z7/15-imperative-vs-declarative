@@ -1,0 +1,26 @@
+// imperative vs declarative
+
+// imperative filtering
+
+const numbers = [1, 2, 3, 4, 5]
+
+const filteredNumbers = []
+
+for (let i = 0; i < numbers.length; i += 1) {
+  if (numbers[i] > 3) {
+    filteredNumbers.push(numbers[i])
+  }
+}
+
+console.log(filteredNumbers)
+
+// declarative
+
+const filteredDeclarativeNumbers = numbers.filter(value => value > 3)
+// 1 > 3 => false
+// 2 > 3 => false
+// 3 > 3 => false
+// 4 > 3 => true
+// 5 > 3 => true
+// [4, 5]
+console.log(filteredDeclarativeNumbers)

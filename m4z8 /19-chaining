@@ -1,0 +1,35 @@
+// chaining
+
+
+const students = [{
+    name: "Mango",
+    score: 83,
+    courses: ["matematyka", "fizyka"]
+  },
+  {
+    name: "Poly",
+    score: 59,
+    courses: ["informatyka", "matematyka"]
+  },
+  {
+    name: "Ajax",
+    score: 37,
+    courses: ["fizyka", "biologia"]
+  },
+  {
+    name: "Kiwi",
+    score: 94,
+    courses: ["literatura", "informatyka"]
+  },
+];
+
+// const sorted = students.sort((a, b) => b.score - a.score)
+// console.log(sorted)
+// const names = sorted.map(el => el.name)
+// console.log(names)
+
+const names = students.sort((a, b) => b.score - a.score)
+  .map(el => el.name)
+  .map(el => el.toUpperCase())
+  
+console.log(names)

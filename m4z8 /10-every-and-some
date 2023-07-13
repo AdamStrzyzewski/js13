@@ -1,0 +1,31 @@
+// every and some
+
+// .some((element, index, array) => condition)
+// .every((element, index, array) => condition)
+
+// some === ||
+console.log(
+  [1, 2, 3, 4].some(value => value >= 0) // true
+)
+
+console.log(
+  [-1, -5, -312, -324].some(value => value >= 0) // false
+)
+
+console.log(
+  [-1, 0, -312, -324].some(value => value >= 0) // true
+)
+
+
+// every === &&
+console.log(
+  [1, 2, 3, 4].every(value => value >= 0) // true
+)
+
+console.log(
+  [-1, -5, -312, -324].every(value => value >= 0) // false
+)
+
+console.log(
+  [-1, 0, -312, -324].every(value => value >= 0) // false
+)

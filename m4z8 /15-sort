@@ -1,0 +1,7 @@
+// sort
+
+const scores = [61, 19, 74, 35, 92, 56, 322, 134, 111];
+
+scores.sort() // alphabetical sort
+
+console.log(scores)

@@ -1,0 +1,24 @@
+// Object keys
+
+// Number.parseInt()
+// Math.min()
+
+const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  genres: ["historical prose", "adventure"],
+  rating: 8.38,
+}
+
+// console.log(Object.keys(book))
+
+const bookKeys = Object.keys(book)
+
+for (const key of bookKeys) {
+  console.log(key)
+  //   console.log(book[key])
+}
+
+// for (const key of Object.keys(book)) {
+//   console.log(book[key])
+// }

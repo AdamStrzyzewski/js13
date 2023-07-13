@@ -1,0 +1,51 @@
+// object param 2
+
+function returnPriceLabel({
+  text: {
+    price,
+    suffix = '',
+    prefix = ''
+  },
+  inLowerCase = false,
+  addDate: addDateFlag = false,
+}) {
+  let str = `${prefix}${price}${suffix}`
+  if (inLowerCase) { // if(true) -> if(false)
+    str = str.toLowerCase()
+  }
+  if (addDateFlag) {
+    str = `${str} - ${new Date()}`
+  }
+  console.log(str)
+}
+
+returnPriceLabel({
+  text: {
+    price: 50.30,
+    suffix: " PLN"
+  },
+  addDate: true
+})
+
+returnPriceLabel({
+  text: {
+    price: 30,
+    prefix: "£"
+  }
+})
+
+returnPriceLabel({
+  text: {
+    price: 12.50,
+    suffix: " PLN ZA SZT"
+  },
+  inLowerCase: true
+})
+
+returnPriceLabel({
+  text: {
+    price: 12.50,
+    suffix: " PLN ZA SZT"
+  },
+  inLowerCase: false
+})

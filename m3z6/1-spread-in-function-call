@@ -1,0 +1,13 @@
+// spread in function call
+
+const temps = [14, -5, 23, 34]
+
+console.log(temps)
+
+// console.log(Math.min(-10, 1, 4, 3, 2))
+console.log(Math.min(...temps)) // spread
+console.log(Math.min(14, -5, 23, 34))
+
+console.log(Math.min(temps))
+console.log(Math.min([14, -5, 23, 34]))
+// Math.mix

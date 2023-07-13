@@ -1,0 +1,16 @@
+// array methods slice
+
+const arr = ['a', 'b', 'c', 'd']
+// arr = arr.slice()
+
+// <1, 3)
+const firstNElements = arr.slice(1, 3)
+
+console.log(firstNElements)
+
+console.log(arr)
+
+const last2Elements = arr.slice(-2)
+
+const arrCopy = arr.slice() // copy of the original array
+console.log(arrCopy)

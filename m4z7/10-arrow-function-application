@@ -1,0 +1,18 @@
+// arrow function application
+
+const numbers = [1, 2, 3, 4, 523423, 4, 235, 23, 5, 23, 634, 634]
+
+numbers.forEach(function(number, index) {
+  console.log(`Index: ${index}, number: ${number}`)
+})
+
+
+numbers.forEach(
+  (number, index) => console.log(`Index: ${index}, number: ${number}`)
+)
+
+const logMessage = (number, index) =>
+  console.log(`Index: ${index}, number: ${number}`)
+
+
+numbers.forEach(logMessage)

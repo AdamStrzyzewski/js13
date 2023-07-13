@@ -1,0 +1,35 @@
+// looping through array
+
+const arr = ['a', 'b', 'c']
+
+for (let i = 0; i < arr.length; i++) {
+  const el = arr[i]
+  console.log(`el: ${el}, index: ${i}`)
+}
+
+console.log("------")
+
+for (const el of arr) {
+  console.log(el)
+}
+
+console.log("------")
+
+const str = 'hello world'
+
+for (const char of str) {
+  console.log(char)
+}
+
+for (const x of str) {
+  console.log(x)
+}
+
+const users = ['Adam', 'Malwina', 'Weronika']
+
+for (const user of users) {
+  // user = '5'
+  console.log(user)
+}
+
+console.log(users)

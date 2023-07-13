@@ -1,0 +1,14 @@
+// spread to copy array
+
+const temps = [14, -5, 23, 34]
+
+const tempsRef = temps
+
+const tempsCopy = [...temps]
+// const tempsCopy = [14, -5, 23, 34]
+
+tempsRef.push(5)
+
+console.log(tempsCopy)
+console.log(temps)
+console.log(tempsRef)

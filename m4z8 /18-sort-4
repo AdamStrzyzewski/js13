@@ -1,0 +1,33 @@
+// sort 4
+
+const students = [{
+    name: "Mango",
+    score: 83
+  },
+  {
+    name: "Poly",
+    score: 59
+  },
+  {
+    name: "Ajax",
+    score: 37
+  },
+  {
+    name: "Kiwi",
+    score: 94
+  },
+];
+
+
+// ascending scores
+students.sort((a, b) => a.score - b.score)
+console.log(students)
+
+
+// ascending names
+students.sort((a, b) => a.name.localeCompare(b.name))
+console.log(students)
+
+// descending names
+students.sort((a, b) => b.name.localeCompare(a.name))
+console.log(students)

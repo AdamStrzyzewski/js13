@@ -1,0 +1,19 @@
+// arrow function
+
+// function foo(param) {
+//   return `return value ${param}`
+// }
+
+// console.log(foo("param Value"))
+
+// () => {}
+// () => 0
+
+// const foo = (param) => {
+//   return `return value ${param}`
+// }
+
+// 
+const foo = param => `return value ${param}`
+
+console.log(foo("param Value"))

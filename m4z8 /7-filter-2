@@ -1,0 +1,35 @@
+// filter 2
+
+const students = [{
+    name: "Mango",
+    courses: ["matematyka", "fizyka"]
+  },
+  {
+    name: "Poly",
+    courses: ["informatyka", "matematyka"]
+  },
+  {
+    name: "Kiwi",
+    courses: ["fizyka", "biologia"]
+  },
+];
+
+
+const allCourses = students.flatMap(({
+  courses
+}) => courses)
+
+console.log(allCourses)
+
+const uniqueCourses = allCourses.filter(
+  (course, index, array) => array.indexOf(course) === index
+)
+
+//  allCourses.indexOf("matematyka") === 0 // true
+//  allCourses.indexOf("fizyka") === 1 // true
+//  allCourses.indexOf("informatyka") === 2 // true
+//  allCourses.indexOf("matematyka") === 3 // false
+//  allCourses.indexOf("fizyka") === 4 // false
+//  allCourses.indexOf("biologia") === 5 // true
+
+console.log(uniqueCourses)

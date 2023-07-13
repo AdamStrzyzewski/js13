@@ -1,0 +1,39 @@
+// destructuration object 1
+
+const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  genres: ["historical prose", "adventure"],
+  isPublic: true,
+  isForKids: true,
+  rating: 8.38,
+  //   pageCount: 500,
+  //   coverImage: "https://google.com"
+};
+
+// const title = book.title
+
+const {
+  title, // const title = book.title
+  author, // const author = book.author
+  rating: score, // const score = book.rating
+
+  // const coverImage = book.coverImage || "https://via.placeholder.com/640/480"
+  coverImage = "https://via.placeholder.com/640/480",
+
+  // const pages = book.pageCount || "?"
+  pageCount: pages = "?",
+
+  // const genres = book.genres // reference
+  genres,
+  ...rest
+} = book
+
+// const genres = [...book.genres] // no reference
+
+// console.log(title, author, score,coverImage)
+genres.push("fantasy")
+// console.log(genres)
+
+console.log(rest)
+console.log(rest.isPublic)

@@ -1,0 +1,7 @@
+// array methods indexOf
+
+const arr = ['a','b','c']
+
+// ===
+console.log(arr.indexOf('c')) // 2
+console.log(arr.indexOf('d')) // -1

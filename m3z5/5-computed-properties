@@ -1,0 +1,11 @@
+// computed properties
+
+function objectifyBook(propName, propValue){
+    return {
+        [propName]: propValue,
+        propValue
+    }
+}
+
+const obj1 = objectifyBook('nazwa propsa', 500) 
+console.log(obj1)

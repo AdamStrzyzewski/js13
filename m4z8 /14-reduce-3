@@ -1,0 +1,70 @@
+// reduce 3
+
+const tweets = [{
+    id: "000",
+    likes: 5,
+    tags: ["js", "nodejs"]
+  },
+  {
+    id: "001",
+    likes: 2,
+    tags: ["html", "css"]
+  },
+  {
+    id: "002",
+    likes: 17,
+    tags: ["html", "js", "nodejs"]
+  },
+  {
+    id: "003",
+    likes: 8,
+    tags: ["css", "react", "typescript"]
+  },
+  {
+    id: "004",
+    likes: 0,
+    tags: ["js", "nodejs", "react", "angular"]
+  },
+];
+
+// {
+//     js: 10,
+//     nodejs: 5,
+//     react: 3
+// }
+
+const allTagsReduce = tweets.reduce((tags, tweet) => {
+  tags = [...tags, ...tweet.tags]
+  return tags
+}, [])
+
+const allTagsFlatMap = tweets.flatMap(tweet => tweet.tags)
+
+// console.log(allTagsReduce)
+// console.log(allTagsFlatMap)
+
+const tagStats2 = allTagsFlatMap.reduce((stats, tag) => {
+  if (!stats[tag]) {
+    stats[tag] = 0
+  }
+  stats[tag] += 1
+  return stats
+}, {})
+
+console.log(tagStats2)
+
+console.log('-------')
+
+// alternative
+const tagStats = tweets.reduce((stats, tweet) => {
+  tweet.tags.forEach(tag => {
+    if (!stats[tag]) {
+      stats[tag] = 0
+    }
+    stats[tag] += 1
+  })
+
+  return stats
+}, {})
+
+console.log(tagStats)

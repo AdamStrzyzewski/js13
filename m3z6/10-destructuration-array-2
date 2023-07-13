@@ -1,0 +1,13 @@
+// destructuration array 2
+
+const rgb = [200, 255, 100]
+
+// const green = rgb[1]
+// const blue = rgb[2]
+
+const [,green, blue] = rgb
+
+console.log({
+  green,
+  blue
+})

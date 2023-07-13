@@ -1,0 +1,42 @@
+// array of objects
+
+const bookShelf = [{
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "Sen śmiesznego człowieka",
+    author: "Fiodor Dostojewski",
+    rating: 7.75,
+  },
+];
+
+// for (const book of bookShelf) {
+//   console.log(book.title)
+//   console.log(Object.keys(book))
+//   console.log('-----')
+// }
+
+// for (let i = 0; i < bookShelf.length; i++) {
+//   console.log(bookShelf[i].title)
+//   console.log(Object.keys(bookShelf[i]))
+//   console.log('-----')
+// }
+
+let totalRating = 0;
+
+for (const book of bookShelf){
+    totalRating += book.rating
+}
+
+function round(a){
+    return Math.floor(a * 100) / 100
+}
+
+console.log(round(totalRating / bookShelf.length))

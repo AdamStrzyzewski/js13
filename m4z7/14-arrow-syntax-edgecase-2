@@ -1,0 +1,38 @@
+// arrow syntax edgecase 2
+
+// const foo = obj => obj // this works
+
+// this works
+const foo = obj => ({
+  option1: obj.option1
+})
+
+// this fails
+// const foo = obj => {
+//   option1: obj.option1
+// }
+
+// this fails
+// const foo = obj => {
+//   return option1: obj.option1
+// }
+
+// this is okay
+// const foo = obj => {
+//   return {
+//     option1: obj.option1
+//   }
+// }
+
+const boo = () => [1, 2, 3]
+const boo = () => {
+  return [1, 2, 3]
+}
+
+
+console.log(foo({
+  option1: 500,
+  option2: "test"
+}))
+
+console.log(boo())

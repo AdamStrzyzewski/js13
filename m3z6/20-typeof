@@ -1,0 +1,19 @@
+// typeof
+
+const arr = []
+const obj = {}
+console.log(typeof arr)
+
+console.log(Array.isArray(arr))
+console.log(Array.isArray(obj))
+
+console.log(typeof null)
+console.log(null === null)
+console.log(Object.keys(null))
+
+const x = NaN // Not a Number
+const y = 5
+
+console.log(typeof x)
+console.log(Number.isNaN(x))
+console.log(Number.isNaN(y))

@@ -1,0 +1,8 @@
+// arrow function arguments
+
+const foo = (...args) => {
+  console.log(arguments)
+  console.log(args)
+}
+
+foo(1, 2, 3) // empty

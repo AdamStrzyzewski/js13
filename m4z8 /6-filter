@@ -1,0 +1,8 @@
+// filter
+
+const values = [51, -3, 27, 21, -68, 42, -37];
+
+const filtered = values.filter((el, index, array) => el > 0)
+
+console.log(values)
+console.log(filtered)

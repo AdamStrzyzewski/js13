@@ -1,0 +1,56 @@
+// nested objects and arrays
+const obj = {
+  arr: [{
+    prop: 1
+  }, {
+    prop: 2
+  }, {
+    prop: 3
+  }],
+  arr2: [{
+    prop: 4
+  }, {
+    prop: 5
+  }, {
+    prop: 6
+  }]
+}
+
+
+
+const arr = [{
+    prop: 1
+  },
+  {
+    prop: 1
+  }
+]
+
+// const arr2 = [{
+//     prop: 1
+//   },
+//   15,
+//   "hello world"
+// ]
+
+const arr2 = [1, 2, 3]
+
+// const x = {
+//     prop: 1
+//   }
+// const x = obj.arr[0]
+// console.log(obj.arr[0].prop) // 1
+// console.log(x.prop) // 1
+
+
+// console.log(obj['arr'][0])
+// console.log(arr2[0])
+
+const keys = Object.keys(obj)
+
+for (key of keys) {
+  const arr = obj[key]
+  for ({ prop } of arr) {
+    console.log(prop)
+  }
+}

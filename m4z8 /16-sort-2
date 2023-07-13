@@ -1,0 +1,17 @@
+// sort 2
+
+const scores = [-10, 61, 19, 74, 74]
+
+scores.sort((a, b) => {
+//   console.log(`a: ${a}, b: ${b}, result: ${a-b}`)
+  return a - b
+})
+
+scores.sort((a, b) => {
+//   console.log(`a: ${a}, b: ${b}, result: ${b-a}`)
+  return b - a
+})
+
+
+
+console.log(scores)

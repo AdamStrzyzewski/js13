@@ -1,0 +1,32 @@
+// array methods splice
+
+const arr = ['a', 'b', 'c', 'd']
+
+// splice(position, numberOfElementsToRemove, el1, el2...)
+
+// deleting
+// arr.splice(1, 2)
+// from index 1
+// remove 2 elements
+// add nothing
+
+// replacing
+// arr.splice(0, 1, 'replace')
+// from index 0
+// delete 1 element
+// add 'replace'
+// arr.splice(1, 2, 'replace')
+// arr.splice(1, 2, 'replace', 'replace2')
+
+// adding
+// arr.splice(2, 0, 'added', 'added2')
+// from index 2
+// delete nothing
+// add 'added' and 'added2'
+
+// arr.splice(-2, 2) // delete last two elements
+// arr.splice(2, 2)
+// arr.splice(-2, 1) // delete second to last element
+// arr.splice(-2, 1, 'I am new') // replace second to last element
+
+console.log(arr)

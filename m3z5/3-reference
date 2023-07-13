@@ -1,0 +1,14 @@
+// reference
+
+function foo(param){
+    param.a = 15
+}
+
+const arg = {
+    a: 10
+}
+
+console.log(arg)
+foo(arg)
+console.log(arg)
+

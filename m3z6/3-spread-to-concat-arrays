@@ -1,0 +1,13 @@
+// spread to concat arrays
+
+const lastWeekTemps = [14, -5, 23, 34]
+const thisWeekTemps = [10, 7, -12, 54]
+
+const concat1 = [...lastWeekTemps, ...thisWeekTemps]
+const concat2 = [...thisWeekTemps, ...lastWeekTemps]
+
+// const concat1 = [14, -5, 23, 34, 10, 7, -12, 54]
+// const concat2 = [10, 7, -12, 54, 14, -5, 23, 34]
+
+console.log(concat1)
+console.log(concat2)

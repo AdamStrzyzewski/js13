@@ -1,0 +1,31 @@
+// object methods 
+
+function createBook(title, author) {
+  return {
+    title,
+    author,
+    setTitle(title) {
+      this.title = title
+    }
+  }
+}
+
+const book = createBook("Wiedźmin", "Andrzej Sapkowski")
+const book2 = createBook("50 Shades of Grey", "E. L. James")
+
+// {
+//   title: 'Wiedźmin',
+//   author: 'Andrzej Sapkowski',
+//   // method
+//   setTitle(title) {
+//     book.title = title
+//   }
+// }
+
+console.log(book)
+
+book.setTitle('Krew Elfów')
+book2.setTitle("51 Shades of Grey")
+
+console.log(book)
+console.log(book2)

@@ -1,0 +1,30 @@
+// spread objects
+
+const first = {
+  a: 10,
+  b: 5
+}
+
+const second = {
+  c: 25
+}
+
+// const third = {
+//     a: first.a,
+//     b: first.b,
+//     c: second.c
+// }
+
+const third = {
+  ...first,
+  ...second,
+  d: 30
+}
+
+const fourth = {
+    ...first
+}
+
+console.log(third)
+
+console.log(fourth)

@@ -1,0 +1,71 @@
+// object param
+
+// `50.30 PLN`
+// `£30`
+// `12.50 pln za szt`
+// function returnPriceLabel(price, suffix = '', prefix = '', inLowerCase = false, addDate = false) {
+//   let str = `${prefix}${price}${suffix}`
+//   if (inLowerCase) {
+//     str = str.toLowerCase()
+//   }
+//   if(addDate){
+//       str = `${str} - ${new Date()}`
+//   }
+//   console.log(str)
+// }
+
+
+// returnPriceLabel(50.30, " PLN", "", false, true)
+// returnPriceLabel(30, "", "£")
+// returnPriceLabel(12.50, " PLN ZA SZT", "", true)
+
+// function returnPriceLabel(options) {
+//   const {
+//     price,
+//     suffix = '',
+//     prefix = '',
+//     inLowerCase = false,
+//     addDate = false
+//   } = options
+// }
+
+function returnPriceLabel({
+  price,
+  suffix = '',
+  prefix = '',
+  inLowerCase = false,
+  addDate = false,
+}) {
+  let str = `${prefix}${price}${suffix}`
+  if (inLowerCase) { // if(true) -> if(false)
+    str = str.toLowerCase()
+  }
+  if (addDate) {
+    str = `${str} - ${new Date()}`
+  }
+  console.log(str)
+}
+
+// returnPriceLabel(50.30, " PLN", "", false, true)
+returnPriceLabel({
+  price: 50.30,
+  suffix: " PLN",
+  addDate: true
+})
+
+returnPriceLabel({
+  price: 30,
+  prefix: "£"
+})
+
+returnPriceLabel({
+  price: 12.50,
+  suffix: " PLN ZA SZT",
+  inLowerCase: true
+})
+
+returnPriceLabel({
+  price: 12.50,
+  suffix: " PLN ZA SZT",
+  inLowerCase: false
+})

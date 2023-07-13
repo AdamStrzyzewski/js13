@@ -1,0 +1,40 @@
+// destructuration object in a loop
+
+const books = [{
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+];
+
+for (book of books) {
+  console.log(`A book written by ${book.author}, 
+    and titled ${book.title} 
+    - with a score of ${book.rating}`)
+}
+
+// for (book of books) {
+//   const {
+//     title,
+//     author,
+//     rating
+//   } = book
+//   console.log(`A book written by ${author}, 
+//     and titled ${title} 
+//     - with a score of ${rating}`)
+// }
+
+for ({
+    title,
+    author,
+    rating
+  } of books) {
+  console.log(`A book written by ${author}, 
+    and titled ${title} 
+    - with a score of ${rating}`)
+}

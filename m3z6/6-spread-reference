@@ -1,0 +1,25 @@
+// spread reference
+const user = {
+  name: "Adam",
+  friends: ["Tomasz", "Mariusz", "Jakub"]
+}
+
+// const userRef = user
+// userRef.name = "Agata"
+
+// const userSpread = {
+//   name: user.name,
+//   friends: user.friends // reference
+// }
+
+// shallow copy
+const userSpread = {
+  ...user,
+  // friends: [...user.friends] // workaround
+}
+
+userSpread.name = "Agata"
+userSpread.friends.push("Michał")
+
+console.log(userSpread)
+console.log(user)

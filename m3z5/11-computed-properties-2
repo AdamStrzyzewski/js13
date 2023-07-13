@@ -1,0 +1,27 @@
+// computed properties 2
+
+function createRTV(nameOfProduct, flags) {
+  const obj = {
+    nameOfProduct,
+  }
+
+  // obj.soldOut = true
+  // obj.expositionAvailable = true
+  // obj.damaged = true
+  for (flag of flags.split(',')) {
+    obj[flag] = true
+  }
+
+  return obj
+}
+
+const lg = createRTV("LG 42'", 'soldOut,expositionAvailable,damaged')
+const samsung = createRTV("Samsung 50'", 'expositionAvailable')
+
+console.log(lg)
+console.log(samsung)
+
+
+// rename
+lg.name = lg.nameOfProduct
+delete lg.name

@@ -1,0 +1,36 @@
+// pure function
+
+// impure function 
+// const impureMultiply = (arr, n) => {
+//   for (let i = 0; i < arr.length; i += 1) {
+//     arr[i] = arr[i] * n
+//   }
+// }
+
+// const numbers = [1, 2, 3, 4, 5]
+
+// console.log(numbers)
+
+// impureMultiply(numbers, 3)
+// impureMultiply(numbers, 3)
+
+// console.log(numbers)
+
+const pureMultiply = (arr, n) => {
+  const multipled = [...arr]
+
+  for (let i = 0; i < arr.length; i += 1) {
+    multipled[i] = multipled[i] * n
+  }
+  
+  return multipled
+}
+
+const numbers = [1, 2, 3, 4, 5]
+
+const multipled = pureMultiply(numbers, 5)
+const multipled2 = pureMultiply(numbers, 5)
+
+console.log(numbers)
+console.log(multipled)
+console.log(multipled2)
