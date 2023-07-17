@@ -1,0 +1,40 @@
+// callback example
+
+const pizzaPalace = {
+  pizzas: ["Ultracheese", "Smoked", "Four meats"],
+  // higher order function
+  order(pizzaName, onSuccess, onError) {
+    if (this.pizzas.includes(pizzaName)) {
+        // onSuccess === makePizza ||
+        // onSuccess === deliverPizza
+      return onSuccess(pizzaName)
+    }
+    // onError === onOrderError || 
+    // onError === anonymous arrows function
+    return onError(`There is no pizza with a name ${pizzaName} in the assortment.`)
+  },
+};
+// Change code above this line
+
+// Callback for onSuccess
+function makePizza(pizzaName) {
+  return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+}
+
+function deliverPizza(name) {
+  return `Your order is being delivered: ${name}.`;
+}
+
+// Callback for onError
+// onError === onOrderError
+function onOrderError(error) {
+  return `Error! ${error}`;
+}
+
+// Method calls with callbacks
+// pizzaPalace.order() => makePizza() => this is passed to console log
+console.log(pizzaPalace.order("Smoked", makePizza, onOrderError));
+console.log(pizzaPalace.order("Four meats", deliverPizza, onOrderError));
+console.log(pizzaPalace.order("Big Mike", makePizza, onOrderError));
+console.log(pizzaPalace.order("Big Mike", makePizza, (err) => `${err}`));
+pizzaPalace.order("Vienna", makePizza, onOrderError);
