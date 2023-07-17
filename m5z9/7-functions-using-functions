@@ -1,0 +1,12 @@
+// functions using functions
+
+function bar() {
+  return "bar result"
+}
+
+function foo() {
+  return bar()
+}
+
+
+console.log(foo())

@@ -1,0 +1,36 @@
+// function context this
+
+const maciej = {
+  username: "Maciej",
+  showName() {
+    //  const this = maciej
+    console.log(this)
+    console.log(this.username)
+  }
+}
+
+const anna = {
+  username: "Anna",
+  nationality: {
+    code: "PL",
+    // worse
+    showNationality() {
+      console.log(this.code)
+    }
+  },
+  // better
+  showNationality() {
+    console.log(this.nationality.code)
+  },
+  showName() {
+    //  const this = anna
+    console.log(this)
+    console.log(this.username)
+  }
+}
+
+// maciej.showName()
+// anna.showName()
+
+anna.nationality.showNationality() // "PL"
+anna.showNationality() // "PL"

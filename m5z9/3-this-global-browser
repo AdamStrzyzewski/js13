@@ -1,0 +1,10 @@
+// this global browser
+'use strict'
+function foo() {
+  console.log(this) // window || undefined
+}
+
+console.log(this) // window || undefined
+foo()
+
+// console.log(window)

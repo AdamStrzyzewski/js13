@@ -1,0 +1,23 @@
+// this in arrow function
+
+'use strict'
+
+function showThisFn(n) {
+  console.log("this is in showThisFn", this, n, '-----')
+}
+
+const showThisArrow = (n) => {
+  console.log("this is in showThisArrow", this, n,'-----')
+}
+
+const user = {
+  username: "Mango"
+}
+
+user.showContext = showThisArrow
+user.showThisFn = showThisFn
+
+// showThisArrow(10) // window || undefined
+showThisFn(20) // window || undefined
+// user.showContext(15) // window || undefined
+user.showThisFn(25) // object

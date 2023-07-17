@@ -1,0 +1,24 @@
+// function context this 2
+
+const bookShelf = {
+  authors: ["J.R.R Tolkien"],
+  getAuthors() {
+    return this.authors // bookShelf.authors
+  },
+  addAuthor(authorName) {
+    if (authorName && typeof authorName === 'string') {
+      this.authors.push(authorName) // bookShelf.authors.push(authorName)
+    }
+  }
+}
+
+bookShelf.authors.push("J.K Rowling")
+bookShelf.addAuthor("J.K Rowling")
+
+
+bookShelf.authors.push("")
+bookShelf.addAuthor("") // no effect
+bookShelf.addAuthor(null) // effect
+
+
+console.log(bookShelf.getAuthors())

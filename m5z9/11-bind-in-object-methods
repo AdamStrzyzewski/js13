@@ -1,0 +1,19 @@
+// bind in object methods
+'use strict'
+
+const customer = {
+  firstName: "Jacob",
+  lastName: "Mercer",
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+
+function logInfo(cb) {
+  console.log(`[LOG][INFO] ${cb()}`)
+}
+
+
+logInfo(customer.getFullName.bind(customer))
+
+// logInfo(customer.getFullName) // global context (window || undefined)

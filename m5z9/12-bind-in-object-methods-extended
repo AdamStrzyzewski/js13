@@ -1,0 +1,35 @@
+// bind in object methods extended
+// 'use strict'
+
+const customer = {
+  firstName: "Jacob",
+  lastName: "Mercer",
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+
+const customer2 = {
+  firstName: "Weronika",
+  lastName: "Smith",
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+
+function logInfo(cb) {
+  console.log(`[LOG][INFO] ${cb()}`)
+}
+
+
+logInfo(customer.getFullName.bind(customer)) // this = customer
+logInfo(customer2.getFullName.bind(customer2)) // this = customer2
+
+// logInfo(customer.getFullName) // global context (window || undefined)
+// logInfo(function() {
+//   return `${this.firstName} ${this.lastName}`
+// }) // global context (window || undefined)
+// window.firstName
+
+
+// logInfo(() => "arrow function return")

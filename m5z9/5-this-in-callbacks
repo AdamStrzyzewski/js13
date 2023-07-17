@@ -1,0 +1,24 @@
+// this in callbacks
+
+'use strict'
+
+const customer = {
+  firstName: "Jacob",
+  lastName: "Mercer",
+  getFullName() {
+    console.log('-----')
+    console.log(this) // object || window || undefined
+    console.log('-----')
+    return `${this.firstName} ${this.lastName}`
+  }
+}
+
+console.log(customer.getFullName())
+
+function logInfo(callback) {
+  console.log(`[LOG][INFO] ${callback()}`)
+}
+
+logInfo(() => "info text")
+
+logInfo(customer.getFullName) // this to window || undefined
