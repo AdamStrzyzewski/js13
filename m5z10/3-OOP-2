@@ -1,0 +1,22 @@
+// OOP 2
+// object oriented programming
+
+const adam = {
+  baseSalary: 30000,
+  overtime: 10,
+  rate: 20,
+  getWage() {
+    return this.baseSalary + this.overtime * this.rate
+  }
+}
+
+const krzysztof = {
+  baseSalary: 50000,
+  overtime: 20,
+  rate: 30,
+  getWage() {
+    return this.baseSalary + this.overtime * this.rate
+  }
+}
+
+console.log(adam.getWage())

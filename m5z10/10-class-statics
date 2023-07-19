@@ -1,0 +1,49 @@
+// class statics
+
+// console.log(Math.min(1,2,4))
+// console.log(Array.isArray('2'))
+// console.log(Number.isNaN(50))
+// console.log(Number.isNaN(NaN))
+
+class User {
+  static #takenEmails = [];
+  #email;
+
+  static isEmailCorrect(email) {
+    if (!email.includes('@'))
+      return `${email} is not correct`
+
+    return `${email} is fine`
+  }
+
+  static getTakenEmail() {
+    return User.#takenEmails
+  }
+
+  static isEmailTaken(email) {
+    return User.#takenEmails.includes(email)
+  }
+
+  constructor({
+    email
+  }) {
+    this.#email = email
+    User.#takenEmails.push(email)
+  }
+}
+
+// console.log(User.takenEmails)
+const krystian = new User({
+  email: 'krystian@gmail.com'
+})
+
+const mateusz = new User({
+  email: 'mateusz@gmail.com'
+})
+
+console.log(User.getTakenEmail())
+console.log(User.isEmailTaken("adam@gmail.com"))
+console.log(User.isEmailTaken("mateusz@gmail.com"))
+
+console.log(User.isEmailCorrect('test@tes.pl'))
+console.log(User.isEmailCorrect('testtes.pl'))

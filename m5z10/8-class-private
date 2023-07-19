@@ -1,0 +1,45 @@
+// class private
+
+class Employee {
+  // public props (non-mandatory)
+  overtime;
+  // private props (mandatory)
+  #baseSalary;
+
+  constructor({
+    baseSalary,
+    overtime = 0,
+    rate = 20,
+  }) {
+    this.#baseSalary = baseSalary
+    this.rate = rate
+    this.overtime = overtime
+  }
+
+  #getCurrency() {
+        return '$'
+  }
+
+  getWage() {
+    console.log(`${this.#getCurrency()}${this.#baseSalary + this.rate * this.overtime}`)
+  }
+}
+
+const adam = new Employee({
+  baseSalary: 50000,
+  rate: 25,
+  overtime: 15
+})
+
+const krzysztof = new Employee({
+  baseSalary: 60000,
+  rate: 30,
+  overtime: 20
+})
+
+// console.log(adam.#baseSalary) // private error
+// console.log(adam.#getCurrency()) // private error
+console.log(adam)
+// console.log(krzysztof)
+adam.getWage()
+krzysztof.getWage()

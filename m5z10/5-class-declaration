@@ -1,0 +1,9 @@
+// class declaration
+
+class User {
+  // class body    
+}
+
+const adam = new User()
+
+console.log(adam)

@@ -1,0 +1,23 @@
+// class abstract
+class Parent {
+  constructor() {
+    if (this.constructor === Parent) {
+      throw new Error("this is the abstract")
+    }
+  }
+}
+
+class Child extends Parent {
+  constructor() {
+    super()
+    console.log("this is okay")
+  }
+}
+
+try {
+  const parent = new Parent()
+} catch (e) {
+  console.log(`couldnt initiate ${e}`)
+}
+
+const child = new Child()
