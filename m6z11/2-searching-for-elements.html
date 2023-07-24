@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      ul {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>First item</li>
+      <li id="specificElement">Second item</li>
+      <li>Third item</li>
+      <li>Fourth item</li>
+      <li>Fifth item</li>
+    </ul>
+
+    <script>
+      // .querySelector("selector")
+      // .querySelectorAll("selector")
+
+      const list = document.querySelector('ul');
+      const firstElement = list.querySelector('li');
+      // console.log(list);
+      // console.log(firstElement);
+
+      const listElements = document.querySelectorAll('li');
+      const specificElement = document.querySelectorAll('#specificElement');
+      const specificElementSingle = document.querySelector('#specificElement');
+      console.log(specificElement);
+      console.log(specificElementSingle);
+      console.log(list.firstElementChild);
+      // console.log(listElements);
+    </script>
+  </body>
+</html>

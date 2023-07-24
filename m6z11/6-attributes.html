@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style></style>
+  </head>
+
+  <body>
+    <button class="btn" type="button" data-counter="5">5</button>
+    <script>
+      const button = document.querySelector('.btn');
+
+      // console.log(button.hasAttribute('type'));
+      // console.log(button.getAttribute('type'));
+      // console.log(button.getAttribute('class'));
+      // button.setAttribute('class', 'btn green');
+      // console.log(button.getAttribute('class'));
+      // console.log(button.removeAttribute('type'));
+
+      console.log(button.dataset);
+      console.log(button.dataset.counter);
+      console.log(typeof button.dataset.counter); // string
+      button.dataset.counter = 6;
+      console.log(button.dataset);
+      console.log(Object.keys(button.dataset));
+      console.log(button.dataset.counter);
+      console.log(typeof button.dataset.counter); // string
+    </script>
+  </body>
+</html>

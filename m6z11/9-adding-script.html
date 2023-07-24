@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style></style>
+
+    <!-- Waiting with excecution for DOM load -->
+    <!-- <script src="./script.js" defer></script> -->
+
+    <!-- before DOM loads -->
+    <!-- <script src="./script.js"></script> -->
+
+    <!-- before DOM loads -->
+    <!-- <script>
+      const parent = document.querySelector('#parent');
+
+      // console.log(parent.innerHTML);
+
+      let pString = '';
+      for (let i = 1; i <= 5; i += 1) {
+        pString += `
+        <p class="p-${i}" style="color:red;">
+          Hello World ${i}
+        </p>\n
+        `;
+      }
+      console.log(pString);
+      // parent.innerHTML += pString;
+      parent.insertAdjacentHTML('beforebegin', pString); // before
+      // parent.insertAdjacentHTML('afterend', pString); // after
+      // parent.insertAdjacentHTML('afterbegin', pString); // prepend
+      // parent.insertAdjacentHTML('beforeend', pString); // append
+    </script> -->
+  </head>
+
+  <body>
+    <div id="parent"><p>Testowe P</p></div>
+    <!-- after DOM loads -->
+    <!-- <script src="./script.js"></script> -->
+    <!-- after DOM loads -->
+    <!-- <script>
+      const parent = document.querySelector('#parent');
+
+      // console.log(parent.innerHTML);
+
+      let pString = '';
+      for (let i = 1; i <= 5; i += 1) {
+        pString += `
+        <p class="p-${i}" style="color:red;">
+          Hello World ${i}
+        </p>\n
+        `;
+      }
+      console.log(pString);
+      // parent.innerHTML += pString;
+      parent.insertAdjacentHTML('beforebegin', pString); // before
+      // parent.insertAdjacentHTML('afterend', pString); // after
+      // parent.insertAdjacentHTML('afterbegin', pString); // prepend
+      // parent.insertAdjacentHTML('beforeend', pString); // append
+    </script> -->
+  </body>
+</html>

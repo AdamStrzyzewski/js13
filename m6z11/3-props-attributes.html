@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style></style>
+  </head>
+  <body>
+    <textarea id="message" rows="5">Default textarea message</textarea>
+    <input id="message-2" value="treść input" />
+
+    <div>
+      <a href="/home" class="active">home</a>
+      <a href="/about">about</a>
+      <a href="/gallery">gallery</a>
+    </div>
+
+    <br />
+
+    <img
+      class="image"
+      src="https://placeimg.com/640/480/animals"
+      alt=""
+      width="320"
+    />
+    <script>
+      const textarea = document.querySelector('#message');
+      const input = document.querySelector('#message-2');
+      console.log(textarea.value);
+      console.log(typeof textarea.value);
+      console.log(input.value);
+
+      // .checked
+
+      const activeLink = document.querySelector('a.active');
+      console.log(activeLink);
+      activeLink.href = 'https://google.com';
+      console.log(activeLink.href);
+
+      // .src
+    </script>
+  </body>
+</html>
