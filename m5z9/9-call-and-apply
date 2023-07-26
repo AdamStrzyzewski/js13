@@ -1,0 +1,18 @@
+// call and apply
+'use strict'
+
+function greetGuest(greeting, postGreeting) {
+  console.log(`${greeting}, ${this.username}, ${postGreeting}`)
+}
+
+const jakub = {
+  username: "Jakub"
+}
+
+const mateusz = {
+  username: "Mateusz"
+}
+
+
+greetGuest.call(jakub, "hello", "Have a nice stay!") // C - comma - przecinek
+greetGuest.apply(mateusz, ["Cześć", "Miłego pobytu"]) // A - array - tablica

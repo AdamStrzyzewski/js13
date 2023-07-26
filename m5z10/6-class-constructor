@@ -1,0 +1,28 @@
+// class constructor 
+
+class Employee {
+  constructor({
+    baseSalary,
+    overtime = 0,
+    rate = 20,
+  }) {
+    this.baseSalary = baseSalary
+    this.rate = rate
+    this.overtime = overtime
+  }
+}
+
+const adam = new Employee({
+  baseSalary: 50000,
+  rate: 25,
+  overtime: 15
+})
+
+const krzysztof = new Employee({
+  baseSalary: 60000,
+  rate: 30,
+  overtime: 20
+})
+
+console.log(adam)
+console.log(krzysztof)

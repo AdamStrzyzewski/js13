@@ -1,0 +1,7 @@
+// prototype
+
+const arr = [1, 2, 3]
+
+console.log(typeof arr)
+console.log(arr.map(el => el * 2))
+console.log(arr.length)

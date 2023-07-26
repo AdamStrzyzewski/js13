@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style></style>
+  </head>
+
+  <body>
+    <div id="parent"></div>
+    <script>
+      const parent = document.querySelector('#parent');
+
+      const newElements = [];
+      for (let i = 1; i <= 5; i += 1) {
+        const newElement = document.createElement('p');
+        // const newElement = document.createElement('p');
+        newElement.classList.add(`p-${i}`);
+        newElement.textContent = `Hello World ${i}`;
+        newElement.style.color = 'red';
+
+        // parent.append(newElement); // inside of element
+        // parent.prepend(newElement); // inside of element
+        // parent.after(newElement); // outside of element
+        // parent.before(newElement); // outside of element
+        newElements.push(newElement);
+      }
+      parent.append(...newElements);
+
+      const p5 = document.querySelector('.p-5');
+      console.log(p5);
+      p5.remove(); // deleting an element from DOM
+      p5.remove(); // deleting an element from DOM
+      console.log(p5);
+      // parent.append(p5);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+// this in object
+
+const maciej = {
+  username: "Maciej",
+  //   username2: this, // window
+  showThis() {
+    console.log(this)
+  },
+  showName() {
+    console.log(this.username)
+  }
+}
+
+maciej.showThis()
+maciej.showName()

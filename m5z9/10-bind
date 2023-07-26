@@ -1,0 +1,27 @@
+// bind
+'use strict'
+
+function greet(clientName) {
+  console.log(`${clientName}, welcome to ${this.service}`)
+}
+
+const steam = {
+    service: "Steam"
+}
+
+const gmail = {
+    service: "Google Gmail"
+}
+
+// greet.call(steam, "Jakub")
+
+// bind without arguments, more universal
+const greetAtSteam = greet.bind(steam)
+// console.log(typeof greetAtSteam)
+greetAtSteam("Jakub")
+
+
+// bind with arguments
+const greetAtSteamJakub = greet.bind(steam, "Jakub")
+// console.log(typeof greetAtSteamJakub)
+greetAtSteamJakub()

@@ -1,0 +1,67 @@
+// class getters setters
+
+class Employee {
+  #overtime;
+
+  constructor({
+    baseSalary,
+    overtime,
+    rate = 20,
+  }) {
+    this.overtime = overtime
+    this.baseSalary = baseSalary
+    this.rate = rate
+  }
+
+  //   setOvertime(overtime) {
+  //     if (overtime >= 0) {
+  //       console.log(`setting overtime to ${overtime}`)
+  //       this.overtime = overtime
+  //     }
+  //   }
+
+  set overtime(newOvertime) {
+    if (newOvertime >= 0) {
+      console.log(`setting overtime to ${newOvertime}`)
+      this.#overtime = newOvertime
+    } else {
+      this.#overtime = 0
+    }
+  }
+
+  get overtime() {
+    return `you have ${this.#overtime} hours of overtime`
+  }
+  
+  get wage(){
+      return this.baseSalary + this.rate * this.#overtime
+  }
+
+    //   getWage() {
+    //     console.log(this.baseSalary + this.rate * this.#overtime)
+    //   }
+}
+
+const adam = new Employee({
+  baseSalary: 50000,
+  rate: 25,
+  overtime: 15
+})
+
+
+const overtimeForAdam = 100
+
+// bad
+// if (overtimeForAdam >= 0) {
+//   adam.overtime = overtimeForAdam
+// }
+
+// better
+// adam.setOvertime(overtimeForAdam)
+
+// best (setter)
+adam.overtime = overtimeForAdam
+// getter
+console.log(adam.overtime)
+console.log(adam.wage)
+// adam.getWage()

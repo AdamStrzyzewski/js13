@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <button type="button" id="test-button">Click Me!</button>
+
+    <script>
+      const button = document.querySelector('#test-button');
+      // e, evt, event
+      const handleClick = (e) => {
+        console.log(e.type);
+        console.log(e.currentTarget);
+      };
+
+      button.addEventListener('click', handleClick);
+    </script>
+  </body>
+</html>

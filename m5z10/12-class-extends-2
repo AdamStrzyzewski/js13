@@ -1,0 +1,40 @@
+// class extends 2
+
+class User {
+  constructor({
+    email
+  }) {
+    this.email = email
+  }
+
+  getEmail() {
+    return this.email
+  }
+}
+
+class ContentEditor extends User {
+  constructor({
+    email
+  }) {
+    super({
+      email
+    })
+    this.isEditor = true
+  }
+
+  isContentEditor() {
+    return this.isEditor
+  }
+}
+
+const user = new User({
+  email: 'user@test.pl'
+})
+console.log(user.getEmail())
+// console.log(user.isContentEditor()) // error
+
+const editor = new ContentEditor({
+  email: 'editor@test.pl'
+})
+console.log(editor.getEmail())
+console.log(editor.isContentEditor())

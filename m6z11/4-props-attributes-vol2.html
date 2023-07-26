@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .red {
+        color: red;
+      }
+      .green {
+        color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <article class="article">
+      <h2 class="article-title">Welcome to Hawaii!</h2>
+      <p class="article-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+        quaerat nemo veritatis quasi eius eum aliquid, nobis dolore nisi, magnam
+        eaque iusto, necessitatibus atque laborum quam tempora ducimus dicta
+        ipsam.
+      </p>
+    </article>
+
+    <select id="select">
+      <option value="0">Wybierz</option>
+      <option value="1" selected>Opcja 1</option>
+      <option value="2">Opcja 2</option>
+      <option value="3">Opcja 3</option>
+    </select>
+    <script>
+      // .textContent
+
+      const article = document.querySelector('.article');
+      // console.log(article.textContent); // string
+
+      const articleParagraph = document.querySelector('.article-text');
+      // console.log(articleParagraph.textContent); // string
+
+      console.log(articleParagraph.classList);
+      articleParagraph.classList.add('red');
+      articleParagraph.classList.add('red'); // no effect
+      console.log(articleParagraph.classList.contains('red')); // true
+      articleParagraph.classList.remove('red');
+      console.log(articleParagraph.classList.contains('red')); // false
+
+      articleParagraph.classList.toggle('red'); // adding
+      articleParagraph.classList.toggle('red'); // removing
+      articleParagraph.classList.toggle('red'); // adding
+
+      articleParagraph.classList.replace('red', 'green'); // replacing
+
+      const select = document.querySelector('select');
+      console.log(select.selectedOptions[0].label);
+    </script>
+  </body>
+</html>

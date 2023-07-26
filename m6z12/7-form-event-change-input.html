@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      p {
+        padding: 10px;
+      }
+      .correct {
+        border: 2px solid green;
+      }
+      .incorrect {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <input id="test" name="test" />
+      <p id="transformed"></p>
+    </form>
+
+    <script>
+      const input = document.querySelector('#test');
+      const transformed = document.querySelector('#transformed');
+
+      const handler = (e) => {
+        // console.log(e.type);
+        const value = e.currentTarget.value;
+        // transformed.textContent = value
+        //   .toUpperCase()
+        //   .replaceAll(' ', '-');
+        if (value.length > 3 && value.length < 10) {
+          transformed.textContent = 'password okay';
+          transformed.classList.add('correct');
+          transformed.classList.remove('incorrect');
+        } else {
+          transformed.textContent = 'password is not okay';
+          transformed.classList.remove('correct');
+          transformed.classList.add('incorrect');
+        }
+      };
+      // input.addEventListener('change', handler);
+      input.addEventListener('input', handler);
+
+      input.dispatchEvent(new Event('input'));
+    </script>
+  </body>
+</html>

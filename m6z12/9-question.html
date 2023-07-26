@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <button id="btn" type="button">click me</button>
+    <script>
+      const btn = document.querySelector('#btn');
+      function foo(param1, param2) {
+        console.log(param1, param2);
+      }
+      function bar(param1) {
+        console.log(param1, param2);
+      }
+
+      function generateHandler(handler, ...args) {
+        return (e) => {
+          handler(...args);
+        };
+      }
+      // console.log(foo(event));
+      // btn.addEventListener('click', undefined)
+      // btn.addEventListener('click', foo(event)); // as handler something from the function
+
+      // btn.addEventListener('click', generateHandler(foo, 'foo', 'baz'));
+      // btn.addEventListener('click', generateHandler(bar, 'foo'));
+
+      // btn.addEventListener('click', () => {
+      //   foo('bar', 'baz');
+      // });
+      // btn.addEventListener('click', function () {
+      //   foo('bar', 'baz');
+      // });
+    </script>
+  </body>
+</html>

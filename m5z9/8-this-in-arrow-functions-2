@@ -1,0 +1,32 @@
+// this in arrow functions 2
+
+'use strict'
+
+const hotel = {
+  username: "Resort hotel",
+  showThis() {
+    const foo = () => {
+      console.log("this in foo", this) // object context
+    }
+    foo()
+    console.log("--------")
+    console.log("this in showThis", this) // object context
+  },
+//   arrowProp: () => {
+//     console.log("this in arrow prop", this) // global context
+//   }
+}
+
+// hotel.arrowProp = () => {
+//   console.log("this in arrow prop", this) // global context
+// }
+
+hotel.fnProp = function(){
+    console.log("this in fnProp", this) // object context
+}
+
+// hotel.showThis()
+
+// hotel.arrowProp()
+
+hotel.fnProp()

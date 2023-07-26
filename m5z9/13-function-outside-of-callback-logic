@@ -1,0 +1,7 @@
+// function outside of callback logic
+
+function onOrderError(error) {
+  return `Error! ${error}`;
+}
+
+console.log(onOrderError('treść błędu'))

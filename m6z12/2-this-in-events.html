@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <button type="button" id="test-button">Click Me!</button>
+
+    <script>
+      const button = document.querySelector('#test-button');
+
+      const clickHandlerArrow = () => {
+        console.log('arrow', this);
+      };
+
+      function clickHandlerFn() {
+        console.log('function', this);
+      }
+
+      // button.addEventListener('click', clickHandlerArrow); // window
+      // button.addEventListener('click', clickHandlerFn); // element node
+
+      const mango = {
+        username: 'Mango',
+        showUsername() {
+          console.log('this ->', this);
+          console.log(`my username is ${this.username}`);
+        },
+      };
+      mango.showUsername();
+
+      button.addEventListener('click', mango.showUsername);
+      button.addEventListener('click', mango.showUsername.bind(mango));
+    </script>
+  </body>
+</html>
