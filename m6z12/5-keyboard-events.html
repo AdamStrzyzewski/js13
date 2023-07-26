@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="keyboard-events"></div>
+    <script>
+      const listContainer = document.querySelector('#keyboard-events');
+
+      // keydown
+      // keyup
+
+      document.addEventListener('keydown', (e) => {
+        if (e.metaKey && e.code === 'KeyR') {
+          e.preventDefault();
+        }
+
+        console.log({
+          // keyCode: e.keyCode,
+          key: e.key,
+          code: e.code,
+          ctrlKey: e.ctrlKey, // true || false
+          shiftKey: e.shiftKey, // true || false
+          altKey: e.altKey, // true || false
+          metaKey: e.metaKey, // true || false
+        });
+
+        const enteredKey = `
+          <p>${e.code} - ${e.key}</p>
+        `;
+        listContainer.innerHTML = `${enteredKey} ${listContainer.innerHTML}`;
+      });
+    </script>
+  </body>
+</html>

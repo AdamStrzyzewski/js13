@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style></style>
+  </head>
+
+  <body>
+    <form>
+      <input id="test" name="test" />
+      <input id="test-2" name="test-2" />
+
+      <button id="focus-1" type="button">focus on input 1</button>
+      <button id="blur-1" type="button">blur input 1</button>
+    </form>
+
+    <script>
+      const input = document.querySelector('#test');
+      const input2 = document.querySelector('#test-2');
+
+      const buttonFocus1 = document.querySelector('#focus-1');
+      const buttonBlur1 = document.querySelector('#blur-1');
+
+      const handlerFocus = (e) => {
+        e.currentTarget.value = 'focus';
+      };
+      const handlerBlur = (e) => {
+        e.currentTarget.value = 'blur';
+      };
+
+      buttonFocus1.addEventListener('click', () => {
+        input.focus();
+      });
+
+      buttonBlur1.addEventListener('click', () => {
+        input.blur();
+      });
+
+      input.addEventListener('focus', handlerFocus);
+      input.addEventListener('blur', handlerBlur);
+
+      input2.addEventListener('focus', handlerFocus);
+      input2.addEventListener('blur', handlerBlur);
+    </script>
+  </body>
+</html>

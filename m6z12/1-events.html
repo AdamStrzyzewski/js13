@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <button type="button" id="test-button">Click Me!</button>
+
+    <script>
+      const button = document.querySelector('#test-button');
+
+      console.log(button);
+
+      let counter = 0;
+
+      const clickHandler = () => {
+        counter++;
+        console.log(`I was clicked for the ${counter} time`);
+        button.removeEventListener('click', clickHandler);
+      };
+
+      button.addEventListener('click', clickHandler);
+
+      button.addEventListener('mousedown', () => {
+        console.log(`I was moused down`);
+      });
+
+      button.addEventListener('mouseup', () => {
+        console.log(`I was moused up`);
+      });
+
+      // button.removeEventListener('click', clickHandler);
+    </script>
+  </body>
+</html>
