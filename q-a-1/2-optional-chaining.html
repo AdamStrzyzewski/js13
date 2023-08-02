@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      const obj = {
+        person: { name: { firstName: 'Adam' } },
+      };
+
+      console.log(obj.person.name.lastName);
+      //   console.log(obj.person.address.street); error
+      if (
+        obj &&
+        obj.person &&
+        obj.person.address && // false
+        obj.person.address.street
+      ) {
+        console.log(obj.person.address.street);
+      }
+      // ?.
+      if (obj?.person?.address?.street) {
+        console.log(obj?.person?.address?.street);
+      }
+      console.log('test', obj?.person?.address?.street); // undefined
+      if (obj?.person?.name?.firstName) {
+        console.log(obj.person.name.firstName);
+      }
+
+      const key = 'firstName';
+      console.log(obj?.person?.name?.[key]);
+
+      // it's a trap!
+      const user = {
+        address: 0, // anything falsy
+        // address: 1,
+      };
+
+      console.log('user test', user && user.address && user.address.street);
+      console.log('user test 2', user?.address?.street);
+    </script>
+  </body>
+</html>

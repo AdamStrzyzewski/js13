@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // ?? (coalescing) vs || (OR)
+      // ?? - null or undefined
+      // || - OR - is it falsy
+
+      const height = 0;
+
+      console.log(height || 100);
+      console.log(height ?? 100); // 0 !== null && 0 !== undefined
+    </script>
+  </body>
+</html>
