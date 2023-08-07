@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <style>
+    div {
+      padding: 10px;
+      border: 2px solid black;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <div id="parent">
+      Parent
+      <div id="child">
+        child
+        <div id="descendant">Descendant 1</div>
+        <div id="descendant-2">Descendant 2</div>
+      </div>
+    </div>
+    <script>
+      const p = document.querySelector('#parent');
+      const c = document.querySelector('#child');
+      const d = document.querySelector('#descendant');
+      const d2 = document.querySelector('#descendant-2');
+
+      // 1 - capturing
+      // 2 - target
+      // 3 - bubbling
+      p.addEventListener(
+        'click',
+        (e) => {
+          console.log('parent', e.eventPhase);
+          console.log({
+            target: e.target,
+            currentTarget: e.currentTarget,
+          });
+        }
+        // true // capturing || {capture: true}
+      );
+
+      c.addEventListener(
+        'click',
+        (e) => {
+          // e.stopPropagation();
+          console.log('child', e.eventPhase);
+          console.log({
+            target: e.target,
+            currentTarget: e.currentTarget,
+          });
+        }
+        // true // capturing
+      );
+
+      d2.addEventListener(
+        'click',
+        (e) => {
+          // e.stopPropagation();
+          // e.stopImmediatePropagation();
+          console.log('descendant 2', e.eventPhase);
+          console.log({
+            target: e.target,
+            currentTarget: e.currentTarget,
+          });
+        }
+        // true // capturing
+      );
+      d.addEventListener(
+        'click',
+        (e) => {
+          // e.stopPropagation();
+          e.stopImmediatePropagation();
+          console.log('descendant', e.eventPhase);
+          console.log({
+            target: e.target,
+            currentTarget: e.currentTarget,
+          });
+        }
+        // true // capturing
+      );
+
+      d.addEventListener(
+        'click',
+        (e) => {
+          // e.stopPropagation();
+          // e.stopImmediatePropagation();
+          console.log('descendant 2', e.eventPhase);
+          console.log({
+            target: e.target,
+            currentTarget: e.currentTarget,
+          });
+        }
+        // true // capturing
+      );
+    </script>
+  </body>
+</html>
