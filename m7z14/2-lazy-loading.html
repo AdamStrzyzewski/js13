@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
+      integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      body {
+        margin: 16px;
+        line-height: 1.5;
+        color: #2a2a2a;
+        background-color: #f5f5f5;
+      }
+
+      #gallery {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      img {
+        display: block;
+        width: 200px;
+        height: 200px;
+      }
+
+      .blur-up {
+        filter: blur(5px);
+        transition: filter 400ms;
+      }
+
+      .blur-up.lazyloaded {
+        filter: blur(0);
+      }
+    </style>
+
+    <script>
+      const words = [
+        'flavor',
+        'dog',
+        'spooky',
+        'talk',
+        'spicy',
+        'regret',
+        'near',
+        'sick',
+        'straw',
+        'surround',
+        'expect',
+        'dog',
+        'shiny',
+        'acidic',
+        'apparel',
+        'used',
+        'list',
+        'late',
+        'push',
+        'slimy',
+        'time',
+        'fuzzy',
+        'amuse',
+        'meddle',
+        'glove',
+        'guide',
+        'disapprove',
+        'premium',
+        'enjoy',
+        'burly',
+      ];
+
+      window.addEventListener('load', () => {
+        const gallery = document.querySelector('#gallery');
+
+        const images = [];
+
+        for (let i = 0; i < 30; i++) {
+          const photo = document.createElement('img');
+          photo.classList.add('lazyload', 'blur-up');
+          photo.src = `https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe`;
+          photo.dataset.src = `https://source.unsplash.com/random/200×200?${words[i]}`;
+          images.push(photo);
+        }
+
+        gallery.append(...images);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="gallery"></div>
+  </body>
+</html>

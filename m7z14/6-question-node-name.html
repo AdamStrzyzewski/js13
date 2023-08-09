@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="div">Div</div>
+    <p id="p">P</p>
+    <textarea id="textarea">
+        textarea
+    </textarea>
+    <script>
+      const div = document.querySelector('#div');
+      const p = document.querySelector('#p');
+      const textarea = document.querySelector('#textarea');
+      const showNodeName = (e) => {
+        alert(e.target.nodeName);
+      };
+      div.addEventListener('click', showNodeName);
+      p.addEventListener('click', showNodeName);
+      textarea.addEventListener('click', showNodeName);
+    </script>
+  </body>
+</html>

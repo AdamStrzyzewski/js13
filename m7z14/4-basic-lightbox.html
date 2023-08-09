@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="
+    https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js
+    "></script>
+    <link
+      href="
+    https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css
+    "
+      rel="stylesheet"
+    />
+    <style>
+      .basicLightbox {
+        background-color: pink;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", () => {
+        const instance = basicLightbox.create(`
+        <h1>Dynamic Content</h1>
+        <p>You can set the content of the lightbox with JS.</p>
+      `);
+        instance.element().innerHTML = "<p>test</p>";
+        instance.show();
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
