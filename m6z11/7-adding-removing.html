@@ -14,11 +14,14 @@
       const newElements = [];
       for (let i = 1; i <= 5; i += 1) {
         const newElement = document.createElement('p');
+        const span = document.createElement('span');
+        span.textContent = 'jestem spanem';
         // const newElement = document.createElement('p');
         newElement.classList.add(`p-${i}`);
-        newElement.textContent = `Hello World ${i}`;
+        newElement.textContent = `Hello World ${i} `;
         newElement.style.color = 'red';
 
+        newElement.append(span);
         // parent.append(newElement); // inside of element
         // parent.prepend(newElement); // inside of element
         // parent.after(newElement); // outside of element
