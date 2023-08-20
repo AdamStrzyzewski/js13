@@ -1,0 +1,56 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.1/simple-lightbox.min.js"
+      integrity="sha512-X1tKd7cMiYWKVDmFHSn+z1Y+BdrNG6Qvrhj3emg0ZOMsAuzug4ET9PmOFBgYyvcjI1hHGxhkQ1IXhOd9obYeFQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.1/simple-lightbox.css"
+      integrity="sha512-F9LmkLMLlhGg4sZO3XOEaFCBPstirJxc9PNM2pUjKm3DY4nh2AiJV319fy7rhOo1HoLOUsX6UlwcevjQg2tPWw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      img {
+        display: block;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="gallery">
+      <li>
+        <a
+          href="https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820_1280.jpg"
+          ><img
+            src="https://cdn.pixabay.com/photo/2019/05/14/16/43/rchids-4202820__480.jpg"
+            alt="test"
+        /></a>
+      </li>
+      <li>
+        <a
+          href="https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677_1280.jpg"
+          ><img
+            src="https://cdn.pixabay.com/photo/2019/05/14/22/05/container-4203677__340.jpg"
+            alt="test"
+        /></a>
+      </li>
+    </ul>
+    <script>
+      const lightbox = new SimpleLightbox(".gallery a");
+      console.log(lightbox);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        name: 'Josh',
+        weightNumber: 175,
+        weightString: '175',
+        age: 30,
+        eyecolor: 'brown',
+        isHappy: true,
+        example: null,
+        cars: ['Chevy', 'Honda'],
+        favoriteBook: {
+          title: 'The Last Kingdom',
+          author: 'Bernard Cornwell',
+          rating: 8.38,
+        },
+      };
+
+      const jsonString = JSON.stringify(obj);
+
+      //   console.log(jsonString);
+      //   console.log(JSON.stringify(50));
+
+      const reparsed = JSON.parse(jsonString);
+      reparsed.cars.push('Cupra');
+      //   console.log(reparsed);
+
+      //   const right = '50';
+      //   console.log(parsedObj);
+
+      const wrongJson = '{ key: 15 }';
+
+      // const default; // evaluation time error
+
+      //   try...catch
+      //   try {
+      //     console.log('inside try 1');
+      //     const parsedObj = JSON.parse(wrongJson); // runtime
+      //     console.log('inside try 2');
+      //     // throw new Error(errorMessage)
+      //   } catch (e) {
+      //     // name of e is a convention
+      //     // console.log(e.toString());
+      //     // sendErrorToServer()
+      //     console.log(e.name);
+      //     console.log(e.message);
+      //   } finally {
+      //     console.log('finally');
+      //   }
+      //   console.log('dalej');
+
+      function foo() {
+        if (Math.random() > 0.5) {
+          throw new Error("you're unlucky");
+        }
+        return "You're lucky";
+      }
+
+      for (let i = 0; i < 30; i++) {
+        try {
+          console.log(foo());
+        } catch (e) {
+          console.log(e.name);
+          console.log(e.message);
+        }
+      }
+    </script>
+  </body>
+</html>

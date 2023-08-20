@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // localStorage;
+      // sessionStorage;
+
+      localStorage.setItem('ui-theme', 'dark');
+      localStorage.setItem('ui-font-size', '16px');
+      console.log(localStorage.getItem('ui-theme')); // dark
+      console.log(localStorage.getItem('ui-them')); // null
+      // localStorage.clear(); // removes everything
+      localStorage.removeItem('ui-theme');
+
+      const settings = {
+        theme: 'dark',
+        fontSize: 16,
+        rememberMe: true,
+      };
+
+      // localStorage.setItem('settings', JSON.stringify(settings));
+
+      //  console.log(localStorage.getItem('settings'));
+      //  console.log(JSON.parse(localStorage.getItem('settings')));
+
+      const saveToLocalStorage = (key, value) => {
+        try {
+          const serializedValue = JSON.stringify(value);
+          localStorage.setItem(key, serializedValue);
+        } catch (e) {
+          console.log('cannot parse to json');
+        }
+      };
+
+      const loadFromLocalStorage = (key) => {
+        const value = localStorage.getItem(key);
+        try {
+          return JSON.parse(value);
+        } catch (e) {
+          console.log('cannot parse');
+        }
+      };
+
+      saveToLocalStorage('key', { test: 'abc' });
+      console.log(loadFromLocalStorage('key'));
+    </script>
+  </body>
+</html>

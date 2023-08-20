@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-size: 16px;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 5px;
+        border: 1px solid black;
+      }
+
+      .container p {
+        width: 100%;
+      }
+      .block {
+        padding: 5px;
+        font-size: 12px;
+      }
+      #none-container .block {
+        color: white;
+        font-size: 6px;
+        background-color: sienna;
+      }
+      #debounce-trailing-container .block {
+        color: white;
+        background-color: blueviolet;
+      }
+      #throttle-container .block {
+        color: white;
+        background-color: green;
+      }
+      #debounce-container .block {
+        color: black;
+        background-color: orange;
+      }
+      #debounce-leading-container .block {
+        color: black;
+        background-color: pink;
+      }
+      #debounce-both-leading-trailing-container .block {
+        color: black;
+        background-color: silver;
+      }
+      #debounce-both-nothing-container .block {
+        color: white;
+        background-color: peru;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="none-container" class="container">
+      <p>none</p>
+    </div>
+    <div id="throttle-container" class="container">
+      <p>throttle</p>
+    </div>
+    <div id="debounce-container" class="container">
+      <p>debounce</p>
+    </div>
+    <div
+      id="debounce-trailing-container"
+      class="container"
+      data-type="trailing"
+    >
+      <p>trailing</p>
+    </div>
+    <div id="debounce-leading-container" class="container">
+      <p>leading</p>
+    </div>
+    <div id="debounce-both-leading-trailing-container" class="container">
+      <p>both leading and trailing</p>
+    </div>
+    <div id="debounce-both-nothing-container" class="container">
+      <p>nothing debounce</p>
+    </div>
+    <textarea id="scrollable" rows="10"></textarea>
+
+    <script>
+      const scrollable = document.querySelector('#scrollable');
+      const containers = {
+        none: document.querySelector('#none-container'),
+        debounce: document.querySelector('#debounce-container'),
+        trailing: document.querySelector('#debounce-trailing-container'),
+        leading: document.querySelector('#debounce-leading-container'),
+        throttle: document.querySelector('#throttle-container'),
+        leadingTrailing: document.querySelector(
+          '#debounce-both-leading-trailing-container'
+        ),
+        nothingDebounce: document.querySelector(
+          '#debounce-both-nothing-container'
+        ),
+      };
+
+      for (let i = 0; i < 1000; i++) {
+        scrollable.value += `line ${i}\n`; // newline
+      }
+
+      const addBlock = (container) => {
+        const block = document.createElement('div');
+        block.classList.add('block');
+        block.textContent = `${Date.now() - timeStart}ms`;
+        container.append(block);
+      };
+
+      const timeStart = Date.now(); // epoch, unix time
+
+      scrollable.addEventListener('scroll', (e) => {
+        addBlock(containers.none);
+      });
+
+      scrollable.addEventListener(
+        'scroll',
+        _.throttle(() => {
+          addBlock(containers.throttle);
+        }, 300)
+      );
+
+      scrollable.addEventListener(
+        'scroll',
+        _.debounce(() => {
+          addBlock(containers.debounce);
+        }, 300)
+      );
+
+      scrollable.addEventListener(
+        'scroll',
+        _.debounce(
+          () => {
+            addBlock(containers.trailing);
+          },
+          300,
+          { trailing: true } // default
+        )
+      );
+
+      scrollable.addEventListener(
+        'scroll',
+        _.debounce(
+          () => {
+            addBlock(containers.leading);
+          },
+          300,
+          { leading: true, trailing: false }
+        )
+      );
+
+      scrollable.addEventListener(
+        'scroll',
+        _.debounce(
+          () => {
+            addBlock(containers.leadingTrailing);
+          },
+          300,
+          { leading: true, trailing: true }
+        )
+      );
+
+      scrollable.addEventListener(
+        'scroll',
+        _.debounce(
+          () => {
+            addBlock(containers.nothingDebounce);
+          },
+          300,
+          { leading: false, trailing: false }
+        )
+      );
+
+      const debouncedFn = _.debounce(() => {
+        console.log('I got debounced');
+      }, 1000);
+
+      debouncedFn();
+      debouncedFn.cancel(); // anulować wykonywanie debounce
+    </script>
+  </body>
+</html>

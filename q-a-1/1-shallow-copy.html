@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // pt 1
+      const firstObj = { a: { b: 5 }, c: 10, d: 'string' };
+      //   const secondObj = { ...firstObj };
+      const secondObj = {
+        a: firstObj.a, // object, reference
+        c: firstObj.c, // primitive,
+        d: firstObj.d, // primitive no link, no reference
+      };
+
+      //   const thirdObj = {
+      //     ...firstObj,
+      //     a: { ...firstObj.a },
+      //   };
+      const thirdObj = {
+        a: firstObj.a, // object, reference
+        c: firstObj.c, // primitive,
+        d: firstObj.d, // primitive no link, no reference
+        a: {
+          b: firstObj.a.b, // primitive, no reference
+        },
+      };
+
+      //   const a = firstObj.a; // link to object
+
+      //   a.b = 10;
+      firstObj.a.b = 2;
+      firstObj.c = 20;
+
+      console.log('1', firstObj);
+      console.log('2', secondObj);
+      console.log('3', thirdObj);
+
+      // pt 2
+      //   const oldObj = { a: 7, b: 3 };
+      //   const newObj = { ...oldObj };
+      //   const newObj = {
+      //     a: oldObj.a, // primitive, no ref
+      //     b: oldObj.b, // primitive, no ref
+      //   };
+
+      //   oldObj.a = 2;
+      //   console.log('old', oldObj);
+      //   console.log('new', newObj);
+    </script>
+  </body>
+</html>
