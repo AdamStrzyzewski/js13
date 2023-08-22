@@ -40,20 +40,20 @@
       // const default; // evaluation time error
 
       //   try...catch
-      //   try {
-      //     console.log('inside try 1');
-      //     const parsedObj = JSON.parse(wrongJson); // runtime
-      //     console.log('inside try 2');
-      //     // throw new Error(errorMessage)
-      //   } catch (e) {
-      //     // name of e is a convention
-      //     // console.log(e.toString());
-      //     // sendErrorToServer()
-      //     console.log(e.name);
-      //     console.log(e.message);
-      //   } finally {
-      //     console.log('finally');
-      //   }
+      try {
+        console.log('inside try 1');
+        const parsedObj = JSON.parse(wrongJson); // runtime
+        console.log('inside try 2');
+        // throw new Error(errorMessage)
+      } catch (e) {
+        // name of e is a convention
+        // console.log(e.toString());
+        // sendErrorToServer()
+        console.log(e.name);
+        console.log(e.message, typeof e.message);
+      } finally {
+        console.log('finally');
+      }
       //   console.log('dalej');
 
       function foo() {
@@ -63,14 +63,14 @@
         return "You're lucky";
       }
 
-      for (let i = 0; i < 30; i++) {
-        try {
-          console.log(foo());
-        } catch (e) {
-          console.log(e.name);
-          console.log(e.message);
-        }
-      }
+      // for (let i = 0; i < 30; i++) {
+      //   try {
+      //     console.log(foo());
+      //   } catch (e) {
+      //     console.log(e.name);
+      //     console.log(e.message);
+      //   }
+      // }
     </script>
   </body>
 </html>

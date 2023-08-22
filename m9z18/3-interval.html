@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <script>
+      let intervalCount = 0;
+      const cb = (...args) => {
+        //   const cb = (a, b, c, d) => {
+        // console.log(a, b, c, d);
+        console.log(args);
+        console.log(intervalCount);
+        intervalCount++;
+        if (intervalCount === 5) {
+          clearInterval(intervalId);
+        }
+      };
+      //   const twoHours = 1000 * 60 * 60 * 2
+      const delay = 1 * 1000;
+      const intervalId = setInterval(cb, delay, 1, 2, 3, 4);
+
+      //   function foo() {
+      //     setTimeout(foo, 1500);
+      //     console.log('a');
+      //   }
+
+      //   foo();
+    </script>
+  </body>
+</html>
