@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const user = {
+        firstName: 'Michał',
+        age: 99,
+      };
+
+      const fetchUserFromServer = (username, onSuccess, onError) => {
+        console.log('fetching data', username);
+
+        setTimeout(() => {
+          const isSuccess = Math.random() < 0.5;
+          if (isSuccess) {
+            onSuccess(user);
+          } else {
+            onError({ msg: 'User not found' });
+          }
+        }, 2000);
+      };
+
+      const fetchUserFromServerPromisify = (username) => {
+        console.log('fetching data', username);
+        // const isSuccess = Math.random() < 0.5;
+        const isSuccess = true;
+        const err = { msg: 'User not found' };
+        return new Promise((resolve, reject) => {
+          setTimeout(() => (isSuccess ? resolve(user) : reject(err)), 2000);
+        });
+      };
+
+      const onFetchSuccess = (user) => {
+        console.log(user);
+      };
+
+      const onFetchError = (error) => {
+        console.log('There was an error', error.msg);
+      };
+
+      // fetchUserFromServer('Mango', onFetchSuccess, onFetchError);
+      fetchUserFromServerPromisify('Mango')
+        .then(onFetchSuccess)
+        .catch(onFetchError);
+    </script>
+  </body>
+</html>

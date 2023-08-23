@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const isSuccess = true;
+
+      const promise = new Promise((resolve, reject) => {
+        // body of promise
+        setTimeout(() => {
+          if (isSuccess) {
+            resolve('Success! Our promise has resolved peacefully');
+          } else {
+            reject({ msg: 'Error! this promise crashed' });
+          }
+        }, 2000);
+      });
+
+      console.log(promise);
+
+      // then, catch, finally
+      promise
+        .then((result) => {
+          console.log(result); // result of the resolve()
+        })
+        .catch((error) => {
+          console.log(error); // result of reject()
+        })
+        .finally(() => {
+          console.log('finally'); // no result
+        });
+    </script>
+  </body>
+</html>

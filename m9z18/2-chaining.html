@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(5);
+        }, 1000);
+      });
+
+      promise
+        .then((value) => {
+          console.log('1', value);
+          // return value * 2;
+          return new Promise((resolve, reject) => {
+            // 5 * 10
+            setTimeout(() => {
+              // reject(value * 10);
+              resolve(value * 10);
+            }, 1000);
+          });
+        })
+        .then((compoundValue) => {
+          // result of the returned promised up the chain
+          console.log('2', compoundValue);
+          return new Promise((resolve, reject) => {
+            // 50 * 10
+            setTimeout(() => {
+              reject(compoundValue * 10);
+            }, 1000);
+          });
+        })
+        .catch((e) => {
+          console.log('error', e);
+        })
+        .finally(() => {
+          console.log('final task');
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <script>
+      // Promise.all
+      // Promise.allSettled
+      // Promise.race
+
+      const createPromise = (text, delay) =>
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (Math.random() < 0.5) {
+              resolve(text);
+            } else {
+              reject({ msg: `${text} - promise failed` });
+            }
+          }, delay);
+        });
+
+      // const promise = createPromise('jestem promisem', 2000).then((result) =>
+      //   console.log(result)
+      // );
+
+      const promiseArray = [];
+      for (let i = 10; i >= 1; i--) {
+        // console.log(i * 200);
+        // createPromise('test', 0)
+        //   .then((result) => console.log(result))
+        //   .catch((e) => console.log(e));
+        promiseArray.push(createPromise(`promise number ${i}`, i * 200));
+      }
+      // console.log(promiseArray);
+
+      Promise.all(promiseArray)
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+
+      Promise.allSettled(promiseArray)
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+
+      Promise.race(promiseArray)
+        .then((winner) => {
+          console.log('race', winner);
+        })
+        .catch((e) => {
+          console.log('race', e);
+        });
+    </script>
+  </body>
+</html>

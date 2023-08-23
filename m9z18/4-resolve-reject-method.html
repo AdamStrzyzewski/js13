@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <script>
+      //   Promise.resolve();
+      //   Promise.reject();
+
+      const greetGuest = (guestName) => {
+        // alternative
+        if (guestName === '' || guestName === undefined) {
+          return Promise.reject('Guest name must not be empty');
+          // equivalent
+          //   return new Promise((resolve, reject) => {
+          //     reject('Guest name must not be empty');
+          //   });
+        }
+        return Promise.resolve(`Welcome ${guestName}`);
+        // equivalent
+        // return new Promise((resolve, reject) => {
+        //   resolve(`Welcome ${guestName}`);
+        // });
+
+        // return new Promise((resolve, reject) => {
+        //   if (guestName === '' || guestName === undefined) {
+        //     reject('Guest name must not be empty');
+        //   }
+        //   resolve(`Welcome ${guestName}`);
+        // });
+      };
+
+      const greet = (name) => console.log(name);
+      const error = (err) => console.log(`err ${err}`);
+
+      greetGuest('').then(greet).catch(error);
+      greetGuest('Jakub').then(greet).catch(error);
+    </script>
+  </body>
+</html>
