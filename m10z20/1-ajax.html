@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const url =
+      //     'https://jsonplaceholder.typicode.com/users?_limit=7&_sort=name';
+
+      const searchParams = new URLSearchParams({
+        _limit: 5,
+        _sort: 'name',
+      }).toString();
+
+      const baseUrl = 'https://jsonplaceholder.typicode.com/users';
+      const url = `${baseUrl}?${searchParams}`;
+      // query params
+      // https://google.com?foo=value&bar=value2
+      // { foo: "value", bar: "value2" }
+      const options = {};
+      fetch(url, options)
+        .then((response) => {
+          console.log(response);
+          // text()
+          // blob()
+          return response.json();
+        })
+        .then((data) => {
+          console.log('data', data);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    </script>
+  </body>
+</html>

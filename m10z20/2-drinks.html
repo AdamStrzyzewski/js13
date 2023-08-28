@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drinks</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: rgb(234, 234, 234);
+      }
+      body {
+        font-size: 16px;
+        background-color: rgb(15, 17, 38);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      #drinkForm {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      #drinkName {
+        font-size: 40px;
+        padding: 20px;
+        color: black;
+      }
+      #drinks {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 20px;
+        gap: 40px;
+      }
+      .drink {
+        width: calc((100% - 120px) / 4);
+        padding: 20px;
+      }
+      .drink img {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .drink.non-alcoholic {
+        background-color: rgb(18, 111, 35);
+      }
+      .drink.alcoholic {
+        background-color: rgb(130, 17, 17);
+      }
+      .drink.optional-alcohol {
+        background-color: rgb(11, 157, 106);
+      }
+      h2,
+      h3,
+      p {
+        margin: 10px 0;
+      }
+      .drink ul {
+        list-style-type: none;
+      }
+
+      .drink ul li {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="drink" id="drinkForm">
+      <input id="drinkName" name="drink" value="" placeholder="drink-name" />
+    </form>
+    <div id="drinks"></div>
+
+    <script>
+      const getUrl = (drinkName) =>
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkName}`;
+
+      const form = document.querySelector('#drinkForm');
+      const drinksRecipes = document.querySelector('#drinks');
+
+      const createElement = ({
+        type = 'div',
+        classList = [],
+        text = '',
+        content = [],
+        attributes = {},
+      }) => {
+        const el = document.createElement(type);
+
+        el.classList.add(...classList);
+
+        if (text) {
+          el.innerText = text;
+        }
+
+        if (content) {
+          el.append(...content);
+        }
+
+        // { src: "https://google.com" }
+        // [["src", "https://google.com"]]
+        // console.log(attributes, Object.entries(attributes));
+        Object.entries(attributes).forEach(([key, value]) => {
+          el.setAttribute(key, value);
+        });
+
+        return el; // node element
+      };
+
+      const getDrinkTypeClass = (type) =>
+        type.toLowerCase().replaceAll(' ', '-');
+
+      const getIngredientsListElements = (drink) => {
+        const list = [];
+        for (let i = 1; i <= 15; i++) {
+          const ingKey = `strIngredient${i}`;
+          const measureKey = `strMeasure${i}`;
+          let text = drink[ingKey];
+          if (text === null) {
+            break;
+          }
+          if (drink[measureKey]) {
+            text += ` - ${drink[measureKey]}`;
+          }
+          list.push(createElement({ type: 'li', text }));
+        }
+        return list;
+      };
+
+      const createDrinkListElement = (drink) => {
+        const drinkContainer = createElement({
+          type: 'div',
+          classList: ['drink', getDrinkTypeClass(drink.strAlcoholic)],
+        });
+
+        const drinkElements = [
+          createElement({
+            type: 'img',
+            attributes: {
+              src: drink.strDrinkThumb,
+              alt: `image of ${drink.strDrink} by ${drink.strImageAttribution}`,
+            },
+          }),
+          createElement({ type: 'h2', text: drink.strDrink }),
+          createElement({ type: 'h3', text: 'Ingredients' }),
+          createElement({
+            type: 'ul',
+            content: getIngredientsListElements(drink),
+          }),
+          createElement({ type: 'h3', text: 'Instructions' }),
+          createElement({ type: 'p', text: drink.strInstructions }),
+          createElement({ type: 'p', text: `Serve in a ${drink.strGlass}` }),
+        ];
+
+        drinkContainer.append(...drinkElements);
+        return drinkContainer;
+      };
+
+      const loadDrink = (e) => {
+        e.preventDefault();
+
+        const drinkName = e.target.drinkName.value;
+
+        // NEW element -> fetch
+        fetch(getUrl(drinkName)) // fetch() => promise
+          .then((response) => response.json()) // response.json() => promise()
+          .then((data) => {
+            drinksRecipes.innerHTML = '';
+            drinksRecipes.append(...data.drinks.map(createDrinkListElement));
+          });
+      };
+
+      form.addEventListener('submit', loadDrink);
+
+      form.dispatchEvent(new Event('submit')); // synthetic event trigger
+    </script>
+  </body>
+</html>
