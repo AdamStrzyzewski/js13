@@ -1,4 +1,4 @@
-const PRODUCTS_PATH = 'https://api.storerestapi.com/prodcts';
+const PRODUCTS_PATH = 'https://api.storerestapi.com/products';
 
 export function getProducts({ page, limit }) {
   const query = new URLSearchParams({ page, limit });

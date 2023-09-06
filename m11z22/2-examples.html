@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const usersUrl = 'https://jsonplaceholder.typicode.com/users';
+
+      const fetchUser = (name) =>
+        new Promise((resolve) => {
+          fetch(usersUrl)
+            .then((response) => response.json())
+            .then((users) => {
+              const user = users.find((el) => el.name === name);
+              fetch(`${usersUrl}/${user.id}`)
+                .then((response) => response.json())
+                .then((user) => {
+                  console.log(user);
+                });
+            })
+            .catch((e) => {
+              console.log(e);
+            })
+            .finally(() => {
+              console.log('finally');
+            });
+        });
+
+      const fetchUserAsync = async (name) => {
+        try {
+          const responseUsers = await fetch(usersUrl);
+          const users = await responseUsers.json();
+          const { id } = users.find((el) => el.name === name);
+          const responseUser = await fetch(`${usersUrl}/${id}`);
+          const user = await responseUser.json();
+          console.log(user);
+        } catch (e) {
+          console.log(e);
+        }
+
+        console.log('finally');
+      };
+
+      fetchUser('Patricia Lebsack');
+      fetchUserAsync('Patricia Lebsack');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const timeout = () =>
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            // resolve("I'm finished");
+            reject("I'm an error");
+          }, 1000);
+        });
+
+      //   timeout().then((data) => {
+      //     console.log(data);
+      //     timeout().then((data2) => {
+      //       console.log(data2);
+      //     });
+      //   });
+
+      //   const main = async () => {
+      //     const data = await timeout();
+      //     console.log(data);
+      //     const data2 = await timeout();
+      //     console.log(data2);
+      //   };
+
+      async function main() {
+        let data;
+        try {
+          data = await timeout();
+          console.log(data);
+        } catch (e) {
+          // rejects
+          console.log(e);
+        }
+        try {
+          console.log(data);
+          const data2 = await timeout();
+          console.log(data2);
+        } catch (e) {
+          console.log(e);
+        }
+      }
+
+      main(); // returns a promise
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const url = 'https://jsonplaceholder.typicode.com/users';
+
+      async function fetchUserSequentially() {
+        const users = [];
+        // bad practice
+        for (let i = 1; i <= 3; i += 1) {
+          const userResponse = await fetch(`${url}/${i}`);
+          const user = await userResponse.json();
+          users.push(user);
+        }
+        console.log(users);
+      }
+
+      async function fetchUsersConcurrently() {
+        const promises = [];
+        for (let i = 1; i <= 3; i += 1) {
+          promises.push(fetch(`${url}/${i}`));
+        }
+
+        const responses = await Promise.allSettled(promises);
+
+        const users = await Promise.all(
+          responses.map(({ value: response }) => response.json())
+        );
+
+        console.log(users);
+      }
+
+      fetchUsersConcurrently();
+
+      // fetchUserSequentially();
+    </script>
+  </body>
+</html>
