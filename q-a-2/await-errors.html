@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>async await errors</title>
+  </head>
+  <body>
+    <script>
+      const promiseFn = () =>
+        new Promise((resolve, reject) =>
+          Math.random() < 0.5 ? resolve('success') : reject(new Error('oh no'))
+        );
+
+      const promiseHOF = async ({ operation, successFn, errorFn }) => {
+        try {
+          const result = await operation();
+          successFn(result);
+        } catch (err) {
+          errorFn(err);
+        }
+      };
+
+      const successLog = (value) => console.log('result success | ', value);
+      const errorLog = (err) => console.log('result error | ', err.toString());
+
+      const genericWrapper = async (fn, ...rest) => {
+        try {
+          const result = await fn(...rest);
+          return result;
+        } catch (err) {
+          return { error: err };
+        }
+      };
+
+      async function main() {
+        // thenable
+        // promiseFn()
+        //   .then((data) => console.log(data))
+        //   .catch((err) => console.log(`error occured ${err.toString()}`));
+        // classic
+        // await promiseFn();
+        // try...catch
+        // try {
+        //   const result = await promiseFn();
+        //   console.log('result try...catch |', result);
+        // } catch (err) {
+        //   console.log('error try...catch |', err.toString());
+        // }
+        // hof
+        // await promiseHOF({
+        //   operation: promiseFn,
+        //   successFn: successLog,
+        //   errorFn: errorLog,
+        // });
+        // wrapper
+        const result = await genericWrapper(promiseFn);
+        if (!result.error) {
+          console.log('success | ', result);
+        } else {
+          console.log('error | ', result.error.toString());
+        }
+        // alternative
+        // const result = await promiseFn().catch(errorLog);
+        // console.log(result);
+      }
+
+      main();
+    </script>
+  </body>
+</html>
